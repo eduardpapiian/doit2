@@ -1,0 +1,95 @@
+<template>
+            <v-footer dark id="footer">
+                <v-card class="dark white--text text-xs-center footer">
+                    <v-card-text>
+                        <v-layout justify-center row wrap>
+                        <v-btn
+                                v-for="link in links"
+                                :key="link"
+                                color="white"
+                                flat
+                                round
+                        >
+                            {{ link }}
+                        </v-btn>
+                        </v-layout>
+                        <div class="flex block-links">
+                            <a class="links" href="https://www.facebook.com/doithookah/" target="_blank"><fb/><span>DOIT_VDNH</span></a>
+                            <a class="links" href="https://www.instagram.com/doithookah/" target="_blank"><inst/><span>DOIT_VDNH</span></a>
+                            <a class="links" href="https://www.facebook.com/doitkpi/" target="_blank"><fb/><span>DOIT_KPI</span></a>
+                            <a class="links" href="https://www.instagram.com/doit_kpi/" target="_blank"><inst/><span>DOIT_KPI</span></a>
+                        </div>
+                    </v-card-text>
+
+                    <v-card-text class="white--text pt-0">
+                        Первый кальян-бар на ВДНХ, с ярким дизайнерским оформление интерьера.Широкая палитра вкусов табака многих производителей от легкого fumari до ядерного tangiers.Приглашаем на трансляцию спортивных событий и турниры на игровых консолях, а также прочих интерактивных развлечений</v-card-text>
+                    <v-divider></v-divider>
+
+                    <v-card-text class="white--text">
+                        &copy;2019 — <strong>E.P.</strong>
+                    </v-card-text>
+                </v-card>
+            </v-footer>
+</template>
+
+<script>
+  import fb from '~/components/fb.vue'
+  import inst from '~/components/inst.vue'
+  export default {
+    name: 'my-footer',
+    components: {
+      fb,
+      inst
+    },
+
+    data () {
+      return {
+        links: [
+          'Home',
+          'About Us',
+          'Team',
+          'Services',
+          'Blog',
+          'Contact Us'
+        ]
+      }
+    },
+    mounted () {
+
+    },
+    methods: {
+    }
+  }
+</script>
+
+<style lang="less" scoped>
+    #footer{
+        height:auto !important;
+    }
+    .footer{
+        width:100%;
+    }
+    .dark{
+        background-color:#212121;
+    }
+    .flex{
+        display:flex;
+    }
+    .block-links{
+        justify-content:center;
+    }
+    a{
+        color:#fff;
+        text-decoration:none;
+    }
+    .links{
+        display:flex;
+        align-items:center;
+        margin:0 20px;
+        span{
+            margin-top:3px;
+            margin-left:10px;
+        }
+    }
+</style>
+
