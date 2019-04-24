@@ -24,6 +24,9 @@
         </v-layout>
       </v-container>
     </v-layout>
+    <div>
+      <Footer/>
+    </div>
   </div>
 </template>
 
@@ -31,37 +34,39 @@
   <script>
 // import VueInstagram from 'vue-instagram'
 import VueGallery from 'vue-gallery'
+import Footer from '~/components/Footer.vue'
 export default {
   data () {
     return {
       images: [
-        'http://localhost:3000' + require('~/assets/gallery/1.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/2.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/3.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/4.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/5.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/6.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/7.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/8.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/9.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/10.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/11.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/12.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/13.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/14.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/15.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/16.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/17.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/18.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/19.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/20.jpg')
+        'http://localhost:3000' + require('~/assets/gallery/1-min.jpg'),
+        'http://localhost:3000' + require('~/assets/gallery/2-min.jpg'),
+        'http://localhost:3000' + require('~/assets/gallery/3-min.jpg'),
+        'http://localhost:3000' + require('~/assets/gallery/4-min.jpg'),
+        'http://localhost:3000' + require('~/assets/gallery/5-min.jpg'),
+        'http://localhost:3000' + require('~/assets/gallery/6-min.jpg'),
+        'http://localhost:3000' + require('~/assets/gallery/7-min.jpg'),
+        'http://localhost:3000' + require('~/assets/gallery/8-min.jpg'),
+        'http://localhost:3000' + require('~/assets/gallery/9-min.jpg'),
+        'http://localhost:3000' + require('~/assets/gallery/10-min.jpg'),
+        'http://localhost:3000' + require('~/assets/gallery/11-min.jpg'),
+        'http://localhost:3000' + require('~/assets/gallery/12-min.jpg'),
+        'http://localhost:3000' + require('~/assets/gallery/13-min.jpg'),
+        'http://localhost:3000' + require('~/assets/gallery/14-min.jpg'),
+        'http://localhost:3000' + require('~/assets/gallery/15-min.jpg'),
+        'http://localhost:3000' + require('~/assets/gallery/16-min.jpg'),
+        'http://localhost:3000' + require('~/assets/gallery/17-min.jpg'),
+        'http://localhost:3000' + require('~/assets/gallery/18-min.jpg')
+        // 'http://localhost:3000' + require('~/assets/gallery/19-min.jpg'),
+        // 'http://localhost:3000' + require('~/assets/gallery/20-min.jpg')
       ],
       index: null
     }
   },
   components: {
     // VueInstagram,
-    'gallery': VueGallery
+    'gallery': VueGallery,
+    Footer
   },
   methods: {
 

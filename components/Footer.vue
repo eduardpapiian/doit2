@@ -3,15 +3,16 @@
                 <v-card class="dark white--text text-xs-center footer">
                     <v-card-text>
                         <v-layout justify-center row wrap>
-                        <v-btn
-                                v-for="link in links"
-                                :key="link"
-                                color="white"
-                                flat
-                                round
-                        >
-                            {{ link }}
-                        </v-btn>
+                            <v-btn
+                                    v-for="(item, i) in items"
+                                    :key="i"
+                                    :to="item.to"
+                                    color="white"
+                                    flat
+                                    round
+                            >
+                                {{ item.title }}
+                            </v-btn>
                         </v-layout>
                         <div class="flex block-links">
                             <a class="links" href="https://www.facebook.com/doithookah/" target="_blank"><fb/><span>DOIT_VDNH</span></a>
@@ -44,13 +45,14 @@
 
     data () {
       return {
-        links: [
-          'Home',
-          'About Us',
-          'Team',
-          'Services',
-          'Blog',
-          'Contact Us'
+        items: [
+          { icon: 'apps', title: 'О Нас', to: '/' },
+          { icon: 'bubble_chart', title: 'Акции', to: '/akcii' },
+          { icon: 'bubble_chart', title: 'Где Найти', to: '/findus' },
+          { icon: 'bubble_chart', title: 'Резерв', to: '/reserv' },
+          { icon: 'bubble_chart', title: 'Меню', to: '/menu' },
+          { icon: 'bubble_chart', title: 'Кейтеринг', to: '/keitering' },
+          { icon: 'bubble_chart', title: 'Галерея', to: '/galery' }
         ]
       }
     },
