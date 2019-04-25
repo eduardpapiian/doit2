@@ -14,7 +14,7 @@
                                 {{ item.title }}
                             </v-btn>
                         </v-layout>
-                        <div class="flex block-links">
+                        <div class="flex block-links justify-center">
                             <a class="links" href="https://www.facebook.com/doithookah/" target="_blank"><fb/><span>DOIT_VDNH</span></a>
                             <a class="links" href="https://www.instagram.com/doithookah/" target="_blank"><inst/><span>DOIT_VDNH</span></a>
                             <a class="links" href="https://www.facebook.com/doitkpi/" target="_blank"><fb/><span>DOIT_KPI</span></a>
@@ -23,7 +23,7 @@
                     </v-card-text>
 
                     <v-card-text class="white--text pt-0">
-                        Первый кальян-бар на ВДНХ, с ярким дизайнерским оформление интерьера.Широкая палитра вкусов табака многих производителей от легкого fumari до ядерного tangiers.Приглашаем на трансляцию спортивных событий и турниры на игровых консолях, а также прочих интерактивных развлечений</v-card-text>
+                        Сеть кальян-баров на ВДНХ и КПИ, с ярким дизайнерским оформление интерьера. Широкая палитра вкусов табака многих производителей от легкого fumari до ядерного tangiers. Приглашаем на трансляцию спортивных событий и турниры на игровых консолях, а также прочих интерактивных развлечений</v-card-text>
                     <v-divider></v-divider>
 
                     <v-card-text class="white--text">
@@ -78,7 +78,7 @@
         display:flex;
     }
     .block-links{
-        justify-content:center;
+        flex-wrap:wrap;
     }
     a{
         color:#fff;
@@ -87,7 +87,7 @@
     .links{
         display:flex;
         align-items:center;
-        margin:0 20px;
+        margin:10px 20px;
         span{
             margin-top:3px;
             margin-left:10px;

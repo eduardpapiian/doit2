@@ -12,7 +12,7 @@ module.exports = {
       { name: 'og:description', content: 'Сеть кальян-баров на ВДНХ и КПИ, с ярким дизайнерским оформление интерьера. Широкая палитра вкусов табака многих производителей от легкого fumari до ядерного tangiers. Трансляция событий и турниров на игровых консолях' },
       { name: 'og:type', content: 'website' },
       { name: 'og:url', content: 'https://doit.kiev.ua' },
-      { name: 'og:image', content: 'https://nuxtjs.org/meta_640.png' }
+      { name: 'og:image', content: 'http://localhost:3000/assets/logo.jpg' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
@@ -20,7 +20,7 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Monoton:300,400,500,700|Material+Icons' }
     ]
   },
-  plugins: ['~/plugins/vuetify.js', '~/plugins/vue2-google-maps.js'],
+  plugins: ['~/plugins/vuetify.js', '~/plugins/vue2-google-maps.js', { src: '~plugins/slide-menu', ssr: false }],
   css: ['~/assets/style/app.styl'],
   /*
   ** Customize the progress bar color

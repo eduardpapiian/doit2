@@ -88,11 +88,20 @@
     <!--<v-footer app>-->
       <!--<span>&copy; {{ new Date().getFullYear() }}</span>-->
     <!--</v-footer>-->
+    <template>
+      <Slide>
+        <a id="home" href="#">
+          <span>Home</span>
+        </a>
+      </Slide>
+    </template>
   </v-app>
 </template>
 
 <script>
   export default {
+    components: {
+    },
     data () {
       return {
         clipped: false,

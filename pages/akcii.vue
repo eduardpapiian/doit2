@@ -2,48 +2,49 @@
   <div>
   <v-layout>
     <v-container grid-list-md text-xs-center>
-      <v-layout row wrap>
-        <v-flex xs6>
+      <h1 class="mb-3">Акции кальян-баров DOIT</h1>
+      <v-layout row wrap class="justify-center">
+        <v-flex xs6 class="card">
           <v-card>
             <img class="img" src="~/assets/akcii/rightimg.jpg" alt="hookah">
 
           <v-card-title primary-title>
             <div class="right-block-text">
-              <h3 class="headline mb-0">СЧАСТЛИВЫЕ ЧАСЫ</h3>
+              <h2 class="headline mb-0">СЧАСТЛИВЫЕ ЧАСЫ</h2>
               <div class="text"> {{ firstText }} </div>
             </div>
           </v-card-title>
 
-          <v-card-actions class="right-block-btn">
+          <v-card-actions class="right-block-btn mob-column">
             <v-btn flat @click="openVdnhModal" color="orange">Резерв DOIT_VDNH</v-btn>
             <v-btn flat @click="openKpiModal" color="orange">Резерв DOIT_KPI</v-btn>
           </v-card-actions>
         </v-card>
         </v-flex>
-        <v-flex xs6>
+        <v-flex xs6 class="card">
           <v-card>
             <img class="img" src="~/assets/akcii/leftimg.jpg" alt="hookah">
 
             <v-card-title primary-title>
               <div class="left-block-text">
-                <h3 class="headline mb-0">ДЕНЬ РОЖДЕНИЯ В DOIT</h3>
+                <h2 class="headline mb-0">ДЕНЬ РОЖДЕНИЯ В DOIT</h2>
                 <div class="text"> {{ secondText }} </div>
               </div>
             </v-card-title>
 
-            <v-card-actions>
-              <v-btn flat color="orange">Share</v-btn>
-              <v-btn flat color="orange">Explore</v-btn>
+            <v-card-actions class="mob-column">
+              <v-btn flat href="tel:+380636087393" color="orange"><span>ВДНХ: </span> +38 (063) 608 73 93</v-btn>
+              <v-btn flat href="tel:+380970712426" color="orange"><span>КПИ: </span> +38 (097) 071 24 26</v-btn>
             </v-card-actions>
           </v-card>
         </v-flex>
-        <v-flex xs6>
+        <v-flex xs6 class="card card-bottom">
           <v-card>
             <img class="img" src="~/assets/akcii/leftimg1.jpg" alt="beerpong">
 
             <v-card-title primary-title>
               <div class="right-block-text">
-                <h3 class="headline mb-0">BEER PONG в DOIT</h3>
+                <h2 class="headline mb-0">BEER PONG в DOIT</h2>
                 <div class="text"> {{ thirdTExt }} </div>
               </div>
             </v-card-title>
@@ -54,13 +55,13 @@
             </v-card-actions>
           </v-card>
         </v-flex>
-        <v-flex xs6>
+        <v-flex xs6 class="card card-bottom">
           <v-card>
             <img class="img" src="~/assets/akcii/rightimg1.jpg" alt="hookah">
 
             <v-card-title primary-title>
               <div class="left-block-text">
-                <h3 class="headline mb-0">РОЗЫГРЫШ БЕСПЛАТНОГО КАЛЬЯНА</h3>
+                <h2 class="headline mb-0">РОЗЫГРЫШ БЕСПЛАТНОГО КАЛЬЯНА</h2>
                 <div class="text"> {{ fourText }} </div>
               </div>
             </v-card-title>
@@ -89,13 +90,26 @@
   import inst from '~/components/inst.vue'
   import Footer from '~/components/Footer.vue'
   export default {
+    head: {
+      title: 'Акции - DOIT Сеть кальян-баров',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { hid: 'description', name: 'description', content: 'Постоянные акции сети кальян-баров DOIT: Счастливые Часы, Именинникам кальян в подарок, розыгрыш бесплатного кальяна, Бир Понг' },
+        { name: 'og:title', content: 'Акции - DOIT Сеть кальян-баров' },
+        { name: 'og:description', content: 'Постоянные акции сети кальян-баров DOIT: Счастливые Часы, Именинникам кальян в подарок, розыгрыш бесплатного кальяна, Бир Понг' },
+        { name: 'og:type', content: 'website' },
+        { name: 'og:url', content: 'https://doit.kiev.ua/akcii' },
+        { name: 'og:image', content: 'http://localhost:3000' + require('~/assets/logo.jpg') }
+      ]
+    },
     data () {
       return {
         isVdnh: true,
-        firstText: 'C Понедельника по четверг действует акция: с 12:00-17:00 на кальяны скидка 30% Serbetli, Afzal, Fusion, Adalya, Al Fakher, Fasil: 126грн',
+        firstText: 'C Понедельника по четверг действует акция: с 12:00-17:00 на кальяны скидка 30% Serbetli, Afzal, Fusion, Adalya, Al Fakher, Fasil: 126грн. Дымный с нетерпением ждет Тебя в гостях',
         secondText: 'Именинники в нашем баре не останутся без подарков Отмечайте свой День Рождения у нас, и получайте кальян в подарок. Просим при себе имень документ, подтверждающий дату рождения',
         thirdTExt: 'BeerPong - это игра для любителей пива, в которой пиво принимает самое непосредственное участие. Но в первую очередь - это игра на координацию и ловкость. Для всех любителей будут проводиться интереснейшие чемпионаты с крутыми призами. Следи за информацией на наших страницах Instagram и Facebook',
-        fourText: 'Вступай и подписывай на наши обновления в социальных сетях, выполняй условия розыграша и получай приятные подарки от команды DOIT'
+        fourText: 'Вступай и подписывайся на наши обновления в социальных сетях, выполняй условия розыграша и получай приятные подарки от команды DOIT. Для Тебя у Нас приготовлены приятные сюрпризы, в виде депозитов, а все розыграши призов регулярно проходят в социальных сетях'
       }
     },
     components: {
@@ -124,6 +138,17 @@
   .img{
     width:100%;
   }
+  .card{
+    min-width:450px;
+  }
+  .card-bottom{
+    .right-block-text{
+      min-height:249px;
+    }
+  .left-block-text{
+    min-height:249px;
+  }
+  }
   .right-block-text{
     text-align:right !important;
   }
@@ -138,5 +163,19 @@
   }
   .social{
     margin-left:5px;
+  }
+  @media only screen and (min-width: 960px){
+    .container {
+      max-width: 1000px;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    .card{
+      min-width:310px;
+    }
+    .mob-column{
+      flex-direction:column;
+      align-items: flex-end;
+    }
   }
 </style>

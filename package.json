@@ -17,6 +17,7 @@
     "nuxt": "^2.6.2",
     "nuxt-fontawesome": "^0.4.0",
     "sweet-modal-vue": "^2.0.0",
+    "vue-burger-menu": "^2.0.1",
     "vue-easy-lightbox": "^0.3.10",
     "vue-gallery": "^2.0.0",
     "vue-instagram": "^2.0.1",
