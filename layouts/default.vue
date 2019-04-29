@@ -149,7 +149,7 @@
     },
     watch: {
       width (val) {
-        console.log('myWidth', val)
+        // console.log('myWidth', val)
         if (val > 943) {
           this.drawer = false
         }

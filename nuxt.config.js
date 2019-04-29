@@ -25,6 +25,7 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
+  serverMiddleware: ['~/api/telegram.js'],
   loading: { color: '#3B8070' },
   /*
   ** Build configuration

@@ -1,7 +1,7 @@
 <template>
     <no-ssr>
         <div>
-          <sweet-modal ref="openVdnhModal" modal-theme="dark" overlay-theme="dark" :width="modalWidth" class="modal-vdnh">
+          <sweet-modal ref="openVdnhModal" modal-theme="dark" overlay-theme="dark" :width="modalWidth" class="modal-vdnh" v-on:close="closeModal">
               <div class="box">
                   <div class="box-part" id="bp-left">
                       <div class="partition" id="partition-register">
@@ -77,13 +77,13 @@
                                 ></v-select>
                                 <v-select
                                   v-else
-                                  v-model="selectKpi"
+                                  v-model="select"
                                   :items="itemsKpi"
-                                  :error-messages="selectKpiErrors"
+                                  :error-messages="selectErrors"
                                   label="Номер Стола"
                                   required
-                                  @change="$v.selectKpi.$touch()"
-                                  @blur="$v.selectKpi.$touch()"
+                                  @change="$v.select.$touch()"
+                                  @blur="$v.select.$touch()"
                                 ></v-select>
                                 <v-textarea
                                   label="Пожелания"
@@ -92,7 +92,8 @@
                                   rows="1"
                                   hint="Есть пожелания?"
                                 ></v-textarea>
-                                <v-btn class="button" color="success" @click="submit">Забронировать</v-btn>
+                                <v-btn v-if="isVdnh"  class="button" color="success" @click="submitVdnh">Забронировать</v-btn>
+                                <v-btn v-else class="button" color="success" @click="submitKpi">Забронировать</v-btn>
                               </form>
                           </div>
                       </div>
@@ -109,12 +110,17 @@
             Внимание! При резерве вип-комнаты действует система депозита. Обязательный заказ на сумму не менее 800 грн.
             <v-btn color="success" slot="button" v-on:click="close">OK</v-btn>
         </sweet-modal>
+         <sweet-modal ref="success" modal-theme="dark" icon="success">
+             Столик {{select}} Успешно зарезервирован!<br>
+             Мы Вам перезвоним Для подтверждения резерва
+         </sweet-modal>
         </div>
     </no-ssr>
 </template>
 <script>
   import { validationMixin } from 'vuelidate'
   import { required, minLength } from 'vuelidate/lib/validators'
+  import axios from 'axios'
   const MODAL_WIDTH = 780
 
   export default {
@@ -127,8 +133,7 @@
       tel: { required, minLength: minLength(10) },
       time: { required },
       number: { required },
-      select: { required },
-      selectKpi: { required }
+      select: { required }
     },
     data: vm => ({
       date: new Date().toISOString().substr(0, 10),
@@ -140,7 +145,6 @@
       time: '',
       number: '',
       select: null,
-      selectKpi: null,
       items: [
         '1',
         '2',
@@ -175,12 +179,6 @@
         const errors = []
         if (!this.$v.select.$dirty) return errors
         !this.$v.select.required && errors.push('обязательное поле')
-        return errors
-      },
-      selectKpiErrors () {
-        const errors = []
-        if (!this.$v.selectKpi.$dirty) return errors
-        !this.$v.selectKpi.required && errors.push('обязательное поле')
         return errors
       },
       nameErrors () {
@@ -222,8 +220,92 @@
         : MODAL_WIDTH
     },
     methods: {
-      submit () {
+      submitVdnh () {
         this.$v.$touch()
+        if (this.$v.$invalid) {
+          return
+        }
+        let data = {
+          name: this.name,
+          phone: this.tel,
+          date: this.dateFormatted,
+          time: this.time,
+          guest: this.number,
+          table: this.select,
+          wishes: this.wish
+        }
+        axios
+          .post(`api/postvdnh`, data)
+          .then(response => {
+            if (response.data.ok === true) {
+              this.$v.$reset()
+              this.$refs.success.open()
+              setTimeout(() => {
+                this.$refs.success.close()
+                this.name = ''
+                this.tel = ''
+                this.dateFormatted = ''
+                this.time = ''
+                this.number = ''
+                this.select = ''
+                this.wish = ''
+                this.$refs.openVdnhModal.close()
+              }, 4000)
+                .catch(error => {
+                  if (!error.response.data.ok) {
+                    this.$v.$reset()
+                    this.$refs.error.open()
+                    setTimeout(() => {
+                      this.$refs.error.close()
+                    }, 4000)
+                  }
+                })
+              // console.log('---', response.data)
+            }
+          })
+      },
+      submitKpi () {
+        this.$v.$touch()
+        if (this.$v.$invalid) {
+          return
+        }
+        let data = {
+          name: this.name,
+          phone: this.tel,
+          date: this.dateFormatted,
+          time: this.time,
+          guest: this.number,
+          table: this.select,
+          wishes: this.wish
+        }
+        axios
+          .post(`api/postkpi`, data)
+          .then(response => {
+            if (response.data.ok === true) {
+              this.$refs.success.open()
+              setTimeout(() => {
+                this.$v.$reset()
+                this.$refs.success.close()
+                this.name = ''
+                this.tel = ''
+                this.dateFormatted = ''
+                this.time = ''
+                this.number = ''
+                this.select = false
+                this.wish = ''
+                this.$refs.openVdnhModal.close()
+              }, 4000)
+            }
+          })
+          .catch(error => {
+            if (!error.response.data.ok) {
+              this.$v.$reset()
+              this.$refs.error.open()
+              setTimeout(() => {
+                this.$refs.error.close()
+              }, 4000)
+            }
+          })
       },
       clear () {
         this.$v.$reset()
@@ -247,6 +329,9 @@
       },
       close () {
         this.$refs.addNot.close()
+      },
+      closeModal () {
+        this.$v.$reset()
       }
     },
     watch: {
@@ -254,8 +339,6 @@
         if (val === '4 - VIP ROOM') {
           this.$refs.addNot.open()
         }
-      },
-      selectKpi (val) {
         if (val === '8 - VIP ROOM') {
           this.$refs.addNot.open()
         }

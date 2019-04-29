@@ -197,13 +197,13 @@
                                 @blur="$v.number.$touch()"
                               ></v-text-field>
                               <v-select
-                                v-model="selectKpi"
+                                v-model="select"
                                 :items="itemsKpi"
-                                :error-messages="selectKpiErrors"
+                                :error-messages="selectErrors"
                                 label="Номер Стола"
                                 required
-                                @change="$v.selectKpi.$touch()"
-                                @blur="$v.selectKpi.$touch()"
+                                @change="$v.select.$touch()"
+                                @blur="$v.select.$touch()"
                               ></v-select>
                               <v-textarea
                                 label="Пожелания"
@@ -231,6 +231,15 @@
       </v-tab-item>
     </v-tabs>
     </v-layout>
+        <no-ssr>
+            <sweet-modal ref="success" modal-theme="dark" icon="success">
+                Столик {{select}} Успешно зарезервирован!<br>
+                Мы Вам перезвоним Для подтверждения резерва
+            </sweet-modal>
+            <sweet-modal ref="error" modal-theme="dark" icon="error">
+                Ошибка
+            </sweet-modal>
+        </no-ssr>
   </v-container>
 </v-layout>
 <div>
@@ -245,13 +254,6 @@
   import { validationMixin } from 'vuelidate'
   import { required, minLength } from 'vuelidate/lib/validators'
   import axios from 'axios'
-  import TelegramBot from 'node-telegram-bot-api'
-  // var Telegram = require('telegram-bot-api')
-  // var util = require('util')
-  //
-  // var api = new Telegram({
-  //   token: '746587611:AAGQWwF6gI-aolduxr72frF9VXSOc6EmXm8'
-  // })
   export default {
     head: {
       title: 'Резерв Онлайн - DOIT Сеть кальян-баров',
@@ -267,7 +269,7 @@
       ]
     },
     data: vm => ({
-      text: 'spme text',
+      text: 'sоme text',
       date: new Date().toISOString().substr(0, 10),
       dateFormatted: vm.formatDate(new Date().toISOString().substr(0, 10)),
       menu1: false,
@@ -276,8 +278,7 @@
       tel: '',
       time: '',
       number: '',
-      select: null,
-      selectKpi: null,
+      select: false,
       items: [
         '1',
         '2',
@@ -305,8 +306,7 @@
       tel: { required, minLength: minLength(10) },
       time: { required },
       number: { required },
-      select: { required },
-      selectKpi: { required }
+      select: { required }
     },
     components: {
       Footer
@@ -319,12 +319,6 @@
         const errors = []
         if (!this.$v.select.$dirty) return errors
         !this.$v.select.required && errors.push('обязательное поле')
-        return errors
-      },
-      selectKpiErrors () {
-        const errors = []
-        if (!this.$v.selectKpi.$dirty) return errors
-        !this.$v.selectKpi.required && errors.push('обязательное поле')
         return errors
       },
       nameErrors () {
@@ -363,20 +357,9 @@
     methods: {
       submitVdnh () {
         this.$v.$touch()
-        const token = '746587611:AAGQWwF6gI-aolduxr72frF9VXSOc6EmXm8'
-        const bot = new TelegramBot(token, { polling: true })
-        const chatId = '-357496791'
-        bot.sendMessage(chatId, 'TEST')
-        // api.sendMessage({
-        //   chat_id: '-357496791',
-        //   text: 'TEST'
-        // })
-        //   .then(function (data) {
-        //     console.log(util.inspect(data, false, null))
-        //   })
-        //   .catch(function (err) {
-        //     console.log(err)
-        //   })
+        if (this.$v.$invalid) {
+          return
+        }
         let data = {
           name: this.name,
           phone: this.tel,
@@ -386,17 +369,75 @@
           table: this.select,
           wishes: this.wish
         }
-        // bot.sendMessage(chatId, data)
-        // console.log('CHAT ID', chatId, 'DATA', data)
-        axios.post('http://localhost:3000/php/mail.php', data)
+        axios
+          .post(`api/postvdnh`, data)
           .then(response => {
-            console.log('---', response.data)
+            if (response.data.ok === true) {
+              this.$refs.success.open()
+              setTimeout(() => {
+                this.$v.$reset()
+                this.$refs.success.close()
+                this.name = ''
+                this.tel = ''
+                this.dateFormatted = ''
+                this.time = ''
+                this.number = ''
+                this.select = false
+                this.wish = ''
+              }, 4000)
+            }
           })
-        console.log(data)
+          .catch(error => {
+            if (!error.response.data.ok) {
+              this.$v.$reset()
+              this.$refs.error.open()
+              setTimeout(() => {
+                this.$refs.error.close()
+              }, 4000)
+            }
+          })
       },
       submitKpi () {
         this.$v.$touch()
-        console.log('Hello world KPI')
+        if (this.$v.$invalid) {
+          return
+        }
+        let data = {
+          name: this.name,
+          phone: this.tel,
+          date: this.dateFormatted,
+          time: this.time,
+          guest: this.number,
+          table: this.select,
+          wishes: this.wish
+        }
+        axios
+          .post(`api/postkpi`, data)
+          .then(response => {
+            if (response.data.ok === true) {
+              this.$refs.success.open()
+              setTimeout(() => {
+                this.$v.$reset()
+                this.$refs.success.close()
+                this.name = ''
+                this.tel = ''
+                this.dateFormatted = ''
+                this.time = ''
+                this.number = ''
+                this.select = false
+                this.wish = ''
+              }, 4000)
+            }
+          })
+          .catch(error => {
+            if (!error.response.data.ok) {
+              this.$v.$reset()
+              this.$refs.error.open()
+              setTimeout(() => {
+                this.$refs.error.close()
+              }, 4000)
+            }
+          })
       },
       clear () {
         this.$v.$reset()

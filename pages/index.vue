@@ -107,7 +107,7 @@
     },
     methods: {
       resize () {
-        console.log('heloo')
+        // console.log('heloo')
         this.mainContent = document.getElementById('main-content')
         this.height = document.getElementById('bg').clientHeight
 
@@ -124,13 +124,13 @@
     watch: {
       height (val) {
         if (val) {
-          console.log('HI!!!', val)
+          // console.log('HI!!!', val)
           // this.resize()
         }
       }
     },
     beforeDestroy: function () {
-      console.log('DESTROY')
+      // console.log('DESTROY')
       window.removeEventListener('resize', this.resize)
     }
   }
