@@ -113,7 +113,7 @@
         { name: 'og:description', content: 'Постоянные акции сети кальян-баров DOIT: Счастливые Часы, Именинникам кальян в подарок, розыгрыш бесплатного кальяна, Бир Понг' },
         { name: 'og:type', content: 'website' },
         { name: 'og:url', content: 'https://doit.kiev.ua/akcii' },
-        { name: 'og:image', content: 'http://localhost:3000' + require('~/assets/logo.jpg') }
+        { name: 'og:image', content: 'https://doit.kiev.ua' + require('~/assets/logo.jpg') }
       ]
     },
     data () {

@@ -84,7 +84,7 @@
         { name: 'og:description', content: 'Сеть кальян-баров на ВДНХ и КПИ, с ярким дизайнерским оформление интерьера. Широкая палитра вкусов табака многих производителей от легкого fumari до ядерного tangiers.' },
         { name: 'og:type', content: 'website' },
         { name: 'og:url', content: 'https://doit.kiev.ua' },
-        { name: 'og:image', content: 'http://localhost:3000' + require('~/assets/logo.jpg') }
+        { name: 'og:image', content: 'https://doit.kiev.ua' + require('~/assets/logo.jpg') }
       ]
     },
     data () {

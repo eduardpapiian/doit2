@@ -12,7 +12,7 @@ module.exports = {
       { name: 'og:description', content: 'Сеть кальян-баров на ВДНХ и КПИ, с ярким дизайнерским оформление интерьера. Широкая палитра вкусов табака многих производителей от легкого fumari до ядерного tangiers. Трансляция событий и турниров на игровых консолях' },
       { name: 'og:type', content: 'website' },
       { name: 'og:url', content: 'https://doit.kiev.ua' },
-      { name: 'og:image', content: 'http://localhost:3000/assets/logo.jpg' }
+      { name: 'og:image', content: 'https://doit.kiev.ua/assets/logo.jpg' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
@@ -27,6 +27,35 @@ module.exports = {
   */
   serverMiddleware: ['~/api/telegram.js'],
   loading: { color: '#3B8070' },
+  modules: [
+    '@nuxtjs/sitemap','@nuxtjs/robots'
+  ],
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://doit.kiev.ua',
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date(),
+      lastmodrealtime: true
+    },
+    gzip: true,
+    exclude: [],
+    generate: false,
+    routes: [
+      '/',
+      '/akcii',
+      '/findus',
+      '/galery',
+      '/keitering',
+      '/menu',
+      '/reserv'
+    ]
+  },
+  robots: {
+    UserAgent: '*',
+    Disallow: '/reserv'
+  },
   /*
   ** Build configuration
   */

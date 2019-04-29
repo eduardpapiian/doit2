@@ -54,7 +54,7 @@ export default {
       { name: 'og:description', content: 'Меню сети кальян-баров DOIT с актуальными ценами. Вы можете уже заранее сделать свой выбор' },
       { name: 'og:type', content: 'website' },
       { name: 'og:url', content: 'https://doit.kiev.ua/menu' },
-      { name: 'og:image', content: 'http://localhost:3000' + require('~/assets/logo.jpg') }
+      { name: 'og:image', content: 'https://doit.kiev.ua' + require('~/assets/logo.jpg') }
     ]
   },
   data () {

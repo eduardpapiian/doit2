@@ -84,7 +84,7 @@
         { name: 'og:description', content: 'Кальн-быры находятся недалеко от станций метро ВДНХ: Голосеевский поспект 130/57 и КПИ: Провиантская 3. Режим работы с 12:00 до 02:00' },
         { name: 'og:type', content: 'website' },
         { name: 'og:url', content: 'https://doit.kiev.ua/findus' },
-        { name: 'og:image', content: 'http://localhost:3000' + require('~/assets/logo.jpg') }
+        { name: 'og:image', content: 'https://doit.kiev.ua' + require('~/assets/logo.jpg') }
       ]
     },
     data () {

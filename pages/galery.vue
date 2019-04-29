@@ -47,32 +47,32 @@ export default {
       { name: 'og:description', content: 'Фото-галерея с Нашими гостями' },
       { name: 'og:type', content: 'website' },
       { name: 'og:url', content: 'https://doit.kiev.ua/galery' },
-      { name: 'og:image', content: 'http://localhost:3000' + require('~/assets/logo.jpg') }
+      { name: 'og:image', content: 'https://doit.kiev.ua' + require('~/assets/logo.jpg') }
     ]
   },
   data () {
     return {
       images: [
-        'http://localhost:3000' + require('~/assets/gallery/1-min.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/2-min.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/3-min.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/4-min.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/5-min.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/6-min.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/7-min.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/8-min.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/9-min.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/10-min.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/11-min.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/12-min.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/13-min.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/14-min.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/15-min.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/16-min.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/17-min.jpg'),
-        'http://localhost:3000' + require('~/assets/gallery/18-min.jpg')
-        // 'http://localhost:3000' + require('~/assets/gallery/19-min.jpg'),
-        // 'http://localhost:3000' + require('~/assets/gallery/20-min.jpg')
+        'https://doit.kiev.ua' + require('~/assets/gallery/1-min.jpg'),
+        'https://doit.kiev.ua' + require('~/assets/gallery/2-min.jpg'),
+        'https://doit.kiev.ua' + require('~/assets/gallery/3-min.jpg'),
+        'https://doit.kiev.ua' + require('~/assets/gallery/4-min.jpg'),
+        'https://doit.kiev.ua' + require('~/assets/gallery/5-min.jpg'),
+        'https://doit.kiev.ua' + require('~/assets/gallery/6-min.jpg'),
+        'https://doit.kiev.ua' + require('~/assets/gallery/7-min.jpg'),
+        'https://doit.kiev.ua' + require('~/assets/gallery/8-min.jpg'),
+        'https://doit.kiev.ua' + require('~/assets/gallery/9-min.jpg'),
+        'https://doit.kiev.ua' + require('~/assets/gallery/10-min.jpg'),
+        'https://doit.kiev.ua' + require('~/assets/gallery/11-min.jpg'),
+        'https://doit.kiev.ua' + require('~/assets/gallery/12-min.jpg'),
+        'https://doit.kiev.ua' + require('~/assets/gallery/13-min.jpg'),
+        'https://doit.kiev.ua' + require('~/assets/gallery/14-min.jpg'),
+        'https://doit.kiev.ua' + require('~/assets/gallery/15-min.jpg'),
+        'https://doit.kiev.ua' + require('~/assets/gallery/16-min.jpg'),
+        'https://doit.kiev.ua' + require('~/assets/gallery/17-min.jpg'),
+        'https://doit.kiev.ua' + require('~/assets/gallery/18-min.jpg')
+        // 'https://doit.kiev.ua' + require('~/assets/gallery/19-min.jpg'),
+        // 'https://doit.kiev.ua' + require('~/assets/gallery/20-min.jpg')
       ],
       index: null
     }
