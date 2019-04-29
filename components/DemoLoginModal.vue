@@ -1,111 +1,118 @@
 <template>
-      <sweet-modal ref="openVdnhModal" modal-theme="dark" overlay-theme="dark" :width="modalWidth" class="modal-vdnh">
-          <div class="box">
-              <div class="box-part" id="bp-left">
-                  <div class="partition" id="partition-register">
-                      <div class="partition-title">Резерв Онлайн</div>
-                      <div class="partition-form">
-                          <form>
-                            <v-text-field
-                              v-model="name"
-                              :error-messages="nameErrors"
-                              label="Имя"
-                              required
-                              @input="$v.name.$touch()"
-                              @blur="$v.name.$touch()"
-                            ></v-text-field>
-                            <v-text-field
-                              v-model="tel"
-                              :error-messages="telErrors"
-                              label="Телефон"
-                              required
-                              @input="$v.tel.$touch()"
-                              @blur="$v.tel.$touch()"
-                            ></v-text-field>
-                            <v-menu
-                              ref="menu1"
-                              v-model="menu1"
-                              :close-on-content-click="false"
-                              :nudge-right="40"
-                              lazy
-                              transition="scale-transition"
-                              offset-y
-                              full-width
-                              max-width="290px"
-                              min-width="290px"
-                            >
-                              <template v-slot:activator="{ on }">
+    <no-ssr>
+        <div>
+          <sweet-modal ref="openVdnhModal" modal-theme="dark" overlay-theme="dark" :width="modalWidth" class="modal-vdnh">
+              <div class="box">
+                  <div class="box-part" id="bp-left">
+                      <div class="partition" id="partition-register">
+                          <div class="partition-title">Резерв Онлайн</div>
+                          <div class="partition-form">
+                              <form>
                                 <v-text-field
-                                  v-model="dateFormatted"
-                                  label="Дата"
-                                  persistent-hint
-                                  @blur="date = parseDate(dateFormatted)"
-                                  v-on="on"
+                                  v-model="name"
+                                  :error-messages="nameErrors"
+                                  label="Имя"
+                                  required
+                                  @input="$v.name.$touch()"
+                                  @blur="$v.name.$touch()"
                                 ></v-text-field>
-                              </template>
-                              <v-date-picker v-model="date" no-title @input="menu1 = false"></v-date-picker>
-                            </v-menu>
-                            <v-text-field
-                              v-model="time"
-                              :error-messages="timeErrors"
-                              type="time"
-                              label="Время"
-                              required
-                              @input="$v.time.$touch()"
-                              @blur="$v.time.$touch()"
-                            ></v-text-field>
-                            <v-text-field
-                              v-model="number"
-                              :error-messages="numberErrors"
-                              type="number"
-                              label="Количество гостей"
-                              required
-                              @input="$v.number.$touch()"
-                              @blur="$v.number.$touch()"
-                            ></v-text-field>
-                            <v-select
-                              v-if="isVdnh"
-                              v-model="select"
-                              :items="items"
-                              :error-messages="selectErrors"
-                              label="Номер Стола"
-                              required
-                              @change="$v.select.$touch()"
-                              @blur="$v.select.$touch()"
-                            ></v-select>
-                            <v-select
-                              v-else
-                              v-model="selectKpi"
-                              :items="itemsKpi"
-                              :error-messages="selectKpiErrors"
-                              label="Номер Стола"
-                              required
-                              @change="$v.selectKpi.$touch()"
-                              @blur="$v.selectKpi.$touch()"
-                            ></v-select>
-                            <v-textarea
-                              label="Пожелания"
-                              v-model="wish"
-                              value=""
-                              rows="1"
-                              hint="Есть пожелания?"
-                            ></v-textarea>
-                            <v-btn class="button" color="success" @click="submit">Забронировать</v-btn>
-                          </form>
+                                <v-text-field
+                                  v-model="tel"
+                                  :error-messages="telErrors"
+                                  label="Телефон"
+                                  required
+                                  @input="$v.tel.$touch()"
+                                  @blur="$v.tel.$touch()"
+                                ></v-text-field>
+                                <v-menu
+                                  ref="menu1"
+                                  v-model="menu1"
+                                  :close-on-content-click="false"
+                                  :nudge-right="40"
+                                  lazy
+                                  transition="scale-transition"
+                                  offset-y
+                                  full-width
+                                  max-width="290px"
+                                  min-width="290px"
+                                >
+                                  <template v-slot:activator="{ on }">
+                                    <v-text-field
+                                      v-model="dateFormatted"
+                                      label="Дата"
+                                      persistent-hint
+                                      @blur="date = parseDate(dateFormatted)"
+                                      v-on="on"
+                                    ></v-text-field>
+                                  </template>
+                                  <v-date-picker v-model="date" no-title @input="menu1 = false"></v-date-picker>
+                                </v-menu>
+                                <v-text-field
+                                  v-model="time"
+                                  :error-messages="timeErrors"
+                                  type="time"
+                                  label="Время"
+                                  required
+                                  @input="$v.time.$touch()"
+                                  @blur="$v.time.$touch()"
+                                ></v-text-field>
+                                <v-text-field
+                                  v-model="number"
+                                  :error-messages="numberErrors"
+                                  type="number"
+                                  label="Количество гостей"
+                                  required
+                                  @input="$v.number.$touch()"
+                                  @blur="$v.number.$touch()"
+                                ></v-text-field>
+                                <v-select
+                                  v-if="isVdnh"
+                                  v-model="select"
+                                  :items="items"
+                                  :error-messages="selectErrors"
+                                  label="Номер Стола"
+                                  required
+                                  @change="$v.select.$touch()"
+                                  @blur="$v.select.$touch()"
+                                ></v-select>
+                                <v-select
+                                  v-else
+                                  v-model="selectKpi"
+                                  :items="itemsKpi"
+                                  :error-messages="selectKpiErrors"
+                                  label="Номер Стола"
+                                  required
+                                  @change="$v.selectKpi.$touch()"
+                                  @blur="$v.selectKpi.$touch()"
+                                ></v-select>
+                                <v-textarea
+                                  label="Пожелания"
+                                  v-model="wish"
+                                  value=""
+                                  rows="1"
+                                  hint="Есть пожелания?"
+                                ></v-textarea>
+                                <v-btn class="button" color="success" @click="submit">Забронировать</v-btn>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="box-part" id="bp-right">
+                      <div class="box-img">
+                        <img v-if="isVdnh" src="~/assets/roomplan/roomplan1-1-min.png" alt="roomplan">
+                        <img v-else src="~/assets/roomplan/roomplan2-1-min.png" alt="roomplan">
                       </div>
                   </div>
               </div>
-              <div class="box-part" id="bp-right">
-                  <div class="box-img">
-                    <img v-if="isVdnh" src="~/assets/roomplan/roomplan1-1.png" alt="roomplan">
-                    <img v-else src="~/assets/roomplan/roomplan2-1.png" alt="roomplan">
-                  </div>
-              </div>
-          </div>
-      </sweet-modal>
+          </sweet-modal>
+        <sweet-modal modal-theme="dark" ref="addNot">
+            Внимание! При резерве вип-комнаты действует система депозита. Обязательный заказ на сумму не менее 800 грн.
+            <v-btn color="success" slot="button" v-on:click="close">OK</v-btn>
+        </sweet-modal>
+        </div>
+    </no-ssr>
 </template>
 <script>
-  import { SweetModal, SweetModalTab } from 'sweet-modal-vue'
   import { validationMixin } from 'vuelidate'
   import { required, minLength } from 'vuelidate/lib/validators'
   const MODAL_WIDTH = 780
@@ -113,8 +120,6 @@
   export default {
     name: 'ReserveModal',
     components: {
-      SweetModal,
-      SweetModalTab
     },
     mixins: [validationMixin],
     validations: {
@@ -239,9 +244,22 @@
 
         const [month, day, year] = date.split('/')
         return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`
+      },
+      close () {
+        this.$refs.addNot.close()
       }
     },
     watch: {
+      select (val) {
+        if (val === '4 - VIP ROOM') {
+          this.$refs.addNot.open()
+        }
+      },
+      selectKpi (val) {
+        if (val === '8 - VIP ROOM') {
+          this.$refs.addNot.open()
+        }
+      },
       date (val) {
         this.dateFormatted = this.formatDate(this.date)
       }
@@ -411,6 +429,14 @@
   }
   .box input[type=password], .box input[type=text]{
     margin-bottom:0;
+  }
+  @media only screen and (max-width: 800px){
+    .box{
+        flex-direction:column-reverse;
+        .box-part {
+            width: 100% !important;
+        }
+    }
   }
 }
 </style>

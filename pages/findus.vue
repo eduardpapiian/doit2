@@ -2,14 +2,15 @@
   <div>
   <v-layout>
     <v-container grid-list-md text-xs-center>
-    <v-layout row wrap>
-      <v-flex xs6>
+      <h1 class="mb-3 top-title">Где Найти кальян-бары DOIT</h1>
+    <v-layout class="top-layout" row wrap>
+      <v-flex class="blocks" xs6>
         <v-card>
-          <img class="img" src="~/assets/find-us/doit.jpg" alt="doit">
+          <img class="img" src="~/assets/find-us/doit-min.jpg" alt="doit">
 
         <v-card-title primary-title class="right-block-text">
           <div>
-            <h3 class="headline mb-0">DOIT ВДНХ</h3>
+            <h2 class="headline mb-0">DOIT ВДНХ <span class="time">C 12:00 - 02:00</span></h2>
           </div>
         </v-card-title>
 
@@ -23,13 +24,13 @@
         </v-card-actions>
       </v-card>
       </v-flex>
-      <v-flex xs6>
+      <v-flex class="blocks" xs6>
         <v-card>
-          <img class="img" src="~/assets/find-us/doit2.jpg" alt="hookah">
+          <img class="img" src="~/assets/find-us/doit2-min.jpg" alt="hookah">
 
           <v-card-title primary-title>
             <div class="left-block-text">
-              <h3 class="headline mb-0">DOIT КПИ</h3>
+              <h2 class="headline mb-0">DOIT КПИ <span class="time">C 12:00 - 02:00</span></h2>
             </div>
           </v-card-title>
 
@@ -73,6 +74,19 @@
   import Footer from '~/components/Footer.vue'
   import DemoLoginModal from '~/components/DemoLoginModal.vue'
   export default {
+    head: {
+      title: 'Где Найти - DOIT Сеть кальян-баров',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { hid: 'description', name: 'description', content: 'Кальн-быры находятся недалеко от станций метро ВДНХ: Голосеевский поспект 130/57 и КПИ: Провиантская 3. Режим работы с 12:00 до 02:00' },
+        { name: 'og:title', content: 'Где Найти - DOIT Сеть кальян-баров' },
+        { name: 'og:description', content: 'Кальн-быры находятся недалеко от станций метро ВДНХ: Голосеевский поспект 130/57 и КПИ: Провиантская 3. Режим работы с 12:00 до 02:00' },
+        { name: 'og:type', content: 'website' },
+        { name: 'og:url', content: 'https://doit.kiev.ua/findus' },
+        { name: 'og:image', content: 'http://localhost:3000' + require('~/assets/logo.jpg') }
+      ]
+    },
     data () {
       return {
         isVdnh: true,
@@ -109,6 +123,9 @@
   .img{
     width:100%;
   }
+  .time{
+    font-size:17px;
+  }
   .column-left{
     display:flex;
     flex-direction: column;
@@ -137,5 +154,14 @@
   }
   .social{
     margin-left:5px;
+  }
+  @media only screen and (max-width: 800px){
+    .top-layout {
+      flex-direction:column !important;
+      align-items: center !important;
+      .blocks{
+        max-width: 100% !important;
+      }
+    }
   }
 </style>

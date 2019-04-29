@@ -2,9 +2,22 @@
   <div class="main-wrapper">
     <div class="about-us-block">
         <div class="title-block">
-            <h1>Сеть кальян-баров DOIT</h1>
+            <h1 class="desktop-title">Сеть кальян-баров DOIT в Киеве</h1>
+          <v-expansion-panel class="mob-accordion">
+            <v-expansion-panel-content
+                    v-for="(item,i) in items"
+                    :key="i"
+            >
+              <template v-slot:header>
+                <div>{{item.title}}</div>
+              </template>
+              <v-card>
+                <v-card-text>{{item.description}}</v-card-text>
+              </v-card>
+            </v-expansion-panel-content>
+          </v-expansion-panel>
         </div>
-      <div class="flex">
+      <div class="flex first-block">
       <div class="left-block">
         <div class="about-us-block_tabak blocks">
           <div class="tabak-img img">
@@ -13,7 +26,7 @@
             <div class="marquee">
               <span>Широкий выбор кальянов</span>
             </div>
-            <img src="~assets/about-us/tabak-min.jpg" alt="">
+            <img src="~assets/about-us/tabak-min.jpg" alt="img">
           </div>
           <div class="tabak-text text">
             Вы всегда сможете насладиться ароматным кальяном. Наши кальянщики смогут предоставить Вам широкий ассортимент табаков на любой вкус. Поэтому если Вы ищете комфортное и уютное место для отдыха, двери наших кальян-баров всегда открыты для Вас, а на нашем сайте Вы с легкостью сможете забронировать столик и просмотреть наше меню
@@ -26,7 +39,7 @@
             <div class="marquee">
               <span>Настольные игры</span>
             </div>
-            <img src="~assets/about-us/games-min.jpg" alt="">
+            <img src="~assets/about-us/games-min.jpg" alt="img">
           </div>
           <div class="games-text text">
             Все знают, что настольные игры  - это всегда интерактивно и весело, особенно в компании друзей. У нас всегда большой выбор настолок для Вас: Дженга, Монополия, Карты конфликта, Правда или Действие, шашки, шахматы, нарды, игральные карты. Частенько стараемся пополнять список еще более интересными и разнообразными играмию С любовью для Вас
@@ -41,7 +54,7 @@
             <div class="marquee">
               <span>Авторские коктейли</span>
             </div>
-            <img src="~assets/about-us/coktails-min.jpg" alt="">
+            <img src="~assets/about-us/coktails-min.jpg" alt="img">
           </div>
           <div class="coktails-text text">
             Можем предложить достаточно широкий ассортимент алкоголя, от крафтового пива до интересных коктейлей, как классических, так и авторских. Наибольшей популярностью пользуются сеты из шотов - отличный вариант для больших компаний. Так же наш бармен может удивить вас потрясающим безалкогольным коктейлем, который не оставит тебя равнодушным, вообщем мы всегда найдем чем вас побаловать.
@@ -54,7 +67,7 @@
             <div class="marquee">
               <span>Sony PlayStation</span>
             </div>
-            <img src="~assets/about-us/ps-min.jpg" alt="">
+            <img src="~assets/about-us/ps-min.jpg" alt="img">
           </div>
           <div class="ps-text text">
             При заказе кальяна в Нашем баре, Вы можете совершенно бесплатно погрузиться в мир интерактивных развлечеий. Устраивайте турниры по FIFA, почувствуйте себя супер-героем в INJUSTICE, или гонщиком в BLUR. Также Вас ждет множество настольных игр. Поэтому забронировав у нас столик, Вы можете быть уверенны в отличном времепровождении
@@ -65,7 +78,7 @@
     </div>
     <div class="discount">
       <h2>Популярные акции</h2>
-      <div class="flex">
+      <div class="flex second-block">
         <div class="discount_left-block flex">
           <div class="discount_left-block_img">
             <div class="bg">
@@ -73,7 +86,7 @@
             <div class="marquee">
               <span>День Рождения в DOIT</span>
             </div>
-            <img src="~assets/about-us/discount/leftimg-min.jpg" alt="">
+            <img src="~assets/about-us/discount/leftimg-min.jpg" alt="img">
           </div>
           <div class="discount_left-block_text">
             <div class="">
@@ -99,7 +112,7 @@
             <div class="marquee">
               <span>Счастливые часы</span>
             </div>
-            <img src="~assets/about-us/discount/rightimg-min.jpg" alt="">
+            <img src="~assets/about-us/discount/rightimg-min.jpg" alt="img">
           </div>
         </div>
       </div>
@@ -139,6 +152,7 @@
 
 <script>
 import Parallax from 'vue-parallaxy'
+// import { BadgerAccordion, BadgerAccordionItem } from 'vue-badger-accordion'
 
 export default {
   mounted () {
@@ -161,6 +175,30 @@ export default {
   },
   components: {
     Parallax
+    // BadgerAccordion,
+    // BadgerAccordionItem
+  },
+  data () {
+    return {
+      items: [
+        {
+          title: 'Широкий выбор кальянов',
+          description: 'Вы всегда сможете насладиться ароматным кальяном. Наши кальянщики смогут предоставить Вам широкий ассортимент табаков на любой вкус. Поэтому если Вы ищете комфортное и уютное место для отдыха, двери наших кальян-баров всегда открыты для Вас, а на нашем сайте Вы с легкостью сможете забронировать столик и просмотреть наше меню'
+        },
+        {
+          title: 'Настольные игры',
+          description: 'Все знают, что настольные игры  - это всегда интерактивно и весело, особенно в компании друзей. У нас всегда большой выбор настолок для Вас: Дженга, Монополия, Карты конфликта, Правда или Действие, шашки, шахматы, нарды, игральные карты. Частенько стараемся пополнять список еще более интересными и разнообразными играмию С любовью для Вас'
+        },
+        {
+          title: 'Авторские коктейли',
+          description: 'Можем предложить достаточно широкий ассортимент алкоголя, от крафтового пива до интересных коктейлей, как классических, так и авторских. Наибольшей популярностью пользуются сеты из шотов - отличный вариант для больших компаний. Так же наш бармен может удивить вас потрясающим безалкогольным коктейлем, который не оставит тебя равнодушным, вообщем мы всегда найдем чем вас побаловать'
+        },
+        {
+          title: 'Sony PlayStation',
+          description: 'При заказе кальяна в Нашем баре, Вы можете совершенно бесплатно погрузиться в мир интерактивных развлечеий. Устраивайте турниры по FIFA, почувствуйте себя супер-героем в INJUSTICE, или гонщиком в BLUR. Также Вас ждет множество настольных игр. Поэтому забронировав у нас столик, Вы можете быть уверенны в отличном времепровождении'
+        }
+      ]
+    }
   },
   methods: {
 
@@ -169,6 +207,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+  .mob-accordion{
+    display:none;
+  }
   .wrapper{
     background-color:black;
   }
@@ -505,4 +546,91 @@ h2{
     }
   }
 }
+  @media only screen and (max-width: 1100px){
+    .desktop-title{
+      display:none;
+    }
+    .first-block{
+      flex-direction:column;
+      .blocks{
+        max-width:100%;
+      }
+      .about-us-block_games{
+        margin-right:0;
+      }
+      .right-block{
+        margin-top:10px;
+        .about-us-block_coktails{
+          margin-left:0;
+        }
+      }
+    }
+    .second-block{
+      flex-direction:column;
+      .discount_left-block{
+        width:100%;
+        &_img{
+          max-width:50%;
+        }
+        &_text{
+          width: 50%
+        }
+      }
+      .discount_right-block{
+        width:100%;
+        &_text{
+          width: 50%;
+          padding-left: 0;
+          border-left: none;
+        }
+      }
+    }
+
+  }
+  @media screen and (max-width: 588px){
+    .first-block{
+      display:none;
+    }
+    .mob-accordion{
+      display:block;
+    }
+    .discount_left-block{
+      display:flex;
+      flex-direction:column;
+      .discount_left-block_img{
+        max-width:100%;
+      }
+      .discount_left-block_text{
+        width: 100%;
+        padding-right: 0;
+      }
+    }
+    .discount_right-block{
+      flex-direction:column-reverse;
+      .discount_left-block_img{
+        max-width: 100%;
+        width:100%;
+      }
+      .discount_right-block_text{
+        width:100%;
+      }
+    }
+    .panels{
+      flex-direction:column;
+    }
+  }
+  @media screen and (max-width: 376px){
+
+  }
+</style>
+
+<style lang="less">
+  .theme--dark.v-expansion-panel .v-expansion-panel__container {
+    background-color: transparent;
+    .v-expansion-panel__header{
+      color:#ff9800;
+      padding-left:0;
+      padding-right:0;
+    }
+  }
 </style>

@@ -2,6 +2,7 @@
   <div>
   <v-layout>
     <v-container grid-list-md text-xs-center>
+        <h1 class="mb-3 top-title">Забронировать столик онлайн</h1>
     <v-layout row wrap>
       <v-tabs
       class="reserve-tabs"
@@ -28,9 +29,11 @@
         <v-card flat>
           <v-card-text>
             <div class="box">
-                <div class="box-part" id="bp-left">
-                    <div class="partition" id="partition-register">
-                      <div class="partition-title">Резерв Онлайн</div>
+                <div class="box-part bp-left">
+                    <div class="partition partition-register">
+                      <div class="partition-title">
+                          <h2>Резерв Онлайн DOIT VDNH</h2>
+                      </div>
                         <div class="partition-form">
                             <form>
                               <v-text-field
@@ -106,7 +109,7 @@
                                 rows="1"
                                 hint="Есть пожелания?"
                               ></v-textarea>
-                              <v-btn class="button" color="success" @click="submit">Забронировать</v-btn>
+                              <v-btn class="button" color="success" @click="submitVdnh">Забронировать</v-btn>
                             </form>
                             <div class="partition-title-1">
                               Внимание! При резерве вип-комнаты действует система депозита. Обязательный заказ на сумму не менее 800 грн.
@@ -114,9 +117,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="box-part" id="bp-right">
+                <div class="box-part bp-right">
                     <div class="box-img">
-                      <img src="~/assets/roomplan/roomplan1-1.png" alt="roomplan">
+                      <img src="~/assets/roomplan/roomplan1-1-min.png" alt="roomplan">
                     </div>
                 </div>
             </div>
@@ -129,9 +132,11 @@
         <v-card flat>
           <v-card-text>
             <div class="box">
-                <div class="box-part" id="bp-left">
-                    <div class="partition" id="partition-register">
-                      <div class="partition-title">Резерв Онлайн</div>
+                <div class="box-part bp-left">
+                    <div class="partition partition-register">
+                      <div class="partition-title">
+                          <h2>Резерв Онлайн DOIT KPI</h2>
+                      </div>
                         <div class="partition-form">
                             <form>
                               <v-text-field
@@ -207,7 +212,7 @@
                                 rows="1"
                                 hint="Есть пожелания?"
                               ></v-textarea>
-                              <v-btn class="button" color="success" @click="submit">Забронировать</v-btn>
+                              <v-btn class="button" color="success" @click="submitKpi">Забронировать</v-btn>
                             </form>
                             <div class="partition-title-1">
                               Внимание! При резерве вип-комнаты действует система депозита. Обязательный заказ на сумму не менее 800 грн.
@@ -215,9 +220,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="box-part" id="bp-right">
+                <div class="box-part bp-right">
                     <div class="box-img">
-                      <img src="~/assets/roomplan/roomplan2-1.png" alt="roomplan">
+                      <img src="~/assets/roomplan/roomplan2-1-min.png" alt="roomplan">
                     </div>
                 </div>
             </div>
@@ -239,7 +244,28 @@
   import Footer from '~/components/Footer.vue'
   import { validationMixin } from 'vuelidate'
   import { required, minLength } from 'vuelidate/lib/validators'
+  import axios from 'axios'
+  import TelegramBot from 'node-telegram-bot-api'
+  // var Telegram = require('telegram-bot-api')
+  // var util = require('util')
+  //
+  // var api = new Telegram({
+  //   token: '746587611:AAGQWwF6gI-aolduxr72frF9VXSOc6EmXm8'
+  // })
   export default {
+    head: {
+      title: 'Резерв Онлайн - DOIT Сеть кальян-баров',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { hid: 'description', name: 'description', content: 'Быстрое нлайн бронирование столиков, в сети кальн-баров DOIT' },
+        { name: 'og:title', content: 'Резерв Онлайн - DOIT Сеть кальян-баров' },
+        { name: 'og:description', content: 'Быстрое нлайн бронирование столиков, в сети кальн-баров DOIT' },
+        { name: 'og:type', content: 'website' },
+        { name: 'og:url', content: 'https://doit.kiev.ua/reserv' },
+        { name: 'og:image', content: 'http://localhost:3000' + require('~/assets/logo.jpg') }
+      ]
+    },
     data: vm => ({
       text: 'spme text',
       date: new Date().toISOString().substr(0, 10),
@@ -335,8 +361,42 @@
       }
     },
     methods: {
-      submit () {
+      submitVdnh () {
         this.$v.$touch()
+        const token = '746587611:AAGQWwF6gI-aolduxr72frF9VXSOc6EmXm8'
+        const bot = new TelegramBot(token, { polling: true })
+        const chatId = '-357496791'
+        bot.sendMessage(chatId, 'TEST')
+        // api.sendMessage({
+        //   chat_id: '-357496791',
+        //   text: 'TEST'
+        // })
+        //   .then(function (data) {
+        //     console.log(util.inspect(data, false, null))
+        //   })
+        //   .catch(function (err) {
+        //     console.log(err)
+        //   })
+        let data = {
+          name: this.name,
+          phone: this.tel,
+          date: this.dateFormatted,
+          time: this.time,
+          guest: this.number,
+          table: this.select,
+          wishes: this.wish
+        }
+        // bot.sendMessage(chatId, data)
+        // console.log('CHAT ID', chatId, 'DATA', data)
+        axios.post('http://localhost:3000/php/mail.php', data)
+          .then(response => {
+            console.log('---', response.data)
+          })
+        console.log(data)
+      },
+      submitKpi () {
+        this.$v.$touch()
+        console.log('Hello world KPI')
       },
       clear () {
         this.$v.$reset()
@@ -391,7 +451,7 @@ $facebook_color: #3880FF;
         box-sizing: border-box;
         height: 100%;
         width: 50%;
-        &#bp-right {
+        &.bp-right {
             // background: url("../assets/roomplan/roomplan.jpg") no-repeat top left;
             // background-size: 100%;
             margin-right:20px;
@@ -538,5 +598,14 @@ $facebook_color: #3880FF;
 <style lang="less">
   .box input[type=password], .box input[type=text]{
     margin-bottom:0 !important;
+  }
+
+  @media only screen and (max-width: 800px){
+      .box{
+          flex-direction:column-reverse;
+      }
+      .box-part {
+          width: 100% !important;
+      }
   }
 </style>

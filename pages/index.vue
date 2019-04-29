@@ -3,55 +3,56 @@
     <div class="main-bg">
       <div class="bg-img bottom-left-img">
         <parallax :speed-factor="0.3">
-          <img id="bg" src="~assets/main-bg/left-bottom-1-min.png" alt="">
+          <img id="bg" src="~assets/main-bg/left-bottom-1-min.png" alt="img">
         </parallax>
       </div>
       <div class="bg-img middle-left-img">
         <parallax :speed-factor="0">
-          <img src="~assets/main-bg/left-middle-1-min.png" alt="">
+          <img src="~assets/main-bg/left-middle-1-min.png" alt="img">
         </parallax>
       </div>
       <div class="bg-img top-left-img">
         <!-- TOP-LEFT -->
         <parallax :speed-factor="0.3" direction="down">
-          <img src="~assets/main-bg/left-top-1-min.png" alt="">
+          <img src="~assets/main-bg/left-top-1-min.png" alt="img">
         </parallax>
       </div>
       <div class="bg-img top-right-img">
         <!-- TOP-RIGHT -->
         <parallax :speed-factor="0.4" direction="down">
-          <img src="~assets/main-bg/right-top-1-min.png" alt="">
+          <img src="~assets/main-bg/right-top-1-min.png" alt="img">
         </parallax>
       </div>
       <div class="bg-img right-bottom-img">
         <parallax :speed-factor="0.3">
-          <img src="~assets/main-bg/right-bottom-1-min.png" alt="">
+          <img src="~assets/main-bg/right-bottom-1-min.png" alt="img">
         </parallax>
       </div>
       <div class="bg-img right-middle-img">
         <parallax  :speed-factor="0">
-          <img src="~assets/main-bg/right-middle-1-min.png" alt="">
+          <img src="~assets/main-bg/right-middle-1-min.png" alt="img">
         </parallax>
       </div>
       <div class="bg-img bg-bottom">
         <parallax :speed-factor="0.27">
-          <img src="~assets/main-bg/bg-center-2-min.png" alt="">
+          <img src="~assets/main-bg/bg-center-2-min.png" alt="img">
         </parallax>
       </div>
       <div class="bg-img bg-behinds" id="logo-center">
         <!-- LOGO-center -->
         <parallax :speed-factor="0.2" direction="down">
-          <img src="~assets/main-bg/bg-behinds-4-min.png" alt="">
+          <img src="~assets/main-bg/bg-behinds-4-min.png" alt="img">
         </parallax>
       </div>
       <div class="bg-img bottom-main">
         <!-- BOTTOM-BG -->
         <parallax :speed-factor="0.1">
-          <img src="~assets/main-bg/bottom-main-min.png" alt="">
+          <img src="~assets/main-bg/bottom-main-min.png" alt="img">
         </parallax>
       </div>
       <div class="wrapper">
         <div class="main-content" id="main-content">
+          <h1 class="mob-title">Сеть кальян-баров DOIT в Киеве</h1>
           <aboutUsBlock/>
         </div>
         <div>
@@ -136,6 +137,11 @@
 </script>
 
 <style lang="less" scoped>
+  .mob-title{
+    display:none;
+    text-align: center;
+    margin-bottom:20px;
+  }
   .doit-main{
     background-color:black;
     color:#ffff;
@@ -170,6 +176,12 @@
           background-color:black;
         }
       }
+    }
+  }
+
+  @media screen and (max-width: 1100px){
+    .mob-title{
+      display:block;
     }
   }
 

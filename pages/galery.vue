@@ -12,6 +12,7 @@
   <div>
     <v-layout>
       <v-container grid-list-md text-xs-center>
+        <h1 class="mb-3 top-title">Фото-галерея с Нашими гостями</h1>
         <v-layout class="wrapp" row wrap>
         <gallery :images="images" :index="index" @close="index = null"></gallery>
           <div
@@ -36,6 +37,19 @@
 import VueGallery from 'vue-gallery'
 import Footer from '~/components/Footer.vue'
 export default {
+  head: {
+    title: 'Галерея - DOIT Сеть кальян-баров',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: 'Фото-галерея с Нашими гостями' },
+      { name: 'og:title', content: 'Галерея - DOIT Сеть кальян-баров' },
+      { name: 'og:description', content: 'Фото-галерея с Нашими гостями' },
+      { name: 'og:type', content: 'website' },
+      { name: 'og:url', content: 'https://doit.kiev.ua/galery' },
+      { name: 'og:image', content: 'http://localhost:3000' + require('~/assets/logo.jpg') }
+    ]
+  },
   data () {
     return {
       images: [

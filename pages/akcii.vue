@@ -5,7 +5,10 @@
       <h1 class="mb-3">Акции кальян-баров DOIT</h1>
       <v-layout row wrap class="justify-center">
         <v-flex xs6 class="card">
-          <v-card>
+          <v-hover>
+          <v-card
+                  slot-scope="{ hover }"
+                  :class="`elevation-${hover ? 12 : 2}`">
             <img class="img" src="~/assets/akcii/rightimg.jpg" alt="hookah">
 
           <v-card-title primary-title>
@@ -20,9 +23,12 @@
             <v-btn flat @click="openKpiModal" color="orange">Резерв DOIT_KPI</v-btn>
           </v-card-actions>
         </v-card>
+       </v-hover>
         </v-flex>
         <v-flex xs6 class="card">
-          <v-card>
+          <v-hover>
+          <v-card slot-scope="{ hover }"
+                  :class="`elevation-${hover ? 12 : 2}`">
             <img class="img" src="~/assets/akcii/leftimg.jpg" alt="hookah">
 
             <v-card-title primary-title>
@@ -37,9 +43,12 @@
               <v-btn flat href="tel:+380970712426" color="orange"><span>КПИ: </span> +38 (097) 071 24 26</v-btn>
             </v-card-actions>
           </v-card>
+         </v-hover>
         </v-flex>
         <v-flex xs6 class="card card-bottom">
-          <v-card>
+          <v-hover>
+          <v-card slot-scope="{ hover }"
+                  :class="`elevation-${hover ? 12 : 2}`">
             <img class="img" src="~/assets/akcii/leftimg1.jpg" alt="beerpong">
 
             <v-card-title primary-title>
@@ -54,9 +63,12 @@
               <v-btn flat color="orange" href="https://www.facebook.com/doitkpi/" target="_blank"><fb/><span class="social">DOIT_KPI</span></v-btn>
             </v-card-actions>
           </v-card>
+          </v-hover>
         </v-flex>
         <v-flex xs6 class="card card-bottom">
-          <v-card>
+          <v-hover>
+          <v-card slot-scope="{ hover }"
+                  :class="`elevation-${hover ? 12 : 2}`">
             <img class="img" src="~/assets/akcii/rightimg1.jpg" alt="hookah">
 
             <v-card-title primary-title>
@@ -71,6 +83,7 @@
               <v-btn flat color="orange" href="https://www.instagram.com/doit_kpi/" target="_blank"><inst/><span class="social">DOIT_KPI</span></v-btn>
             </v-card-actions>
           </v-card>
+          </v-hover>
         </v-flex>
       </v-layout>
     </v-container>
@@ -167,6 +180,12 @@
   @media only screen and (min-width: 960px){
     .container {
       max-width: 1000px;
+    }
+  }
+  @media only screen and (max-width: 800px){
+    .card{
+      max-width:100%;
+      flex-basis: 100%;
     }
   }
   @media only screen and (max-width: 500px) {

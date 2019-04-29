@@ -20,7 +20,7 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Monoton:300,400,500,700|Material+Icons' }
     ]
   },
-  plugins: ['~/plugins/vuetify.js', '~/plugins/vue2-google-maps.js', { src: '~plugins/slide-menu', ssr: false }],
+  plugins: ['~/plugins/vuetify.js', '~/plugins/vue2-google-maps.js', { src: '~plugins/sweet-modal', ssr: false }],
   css: ['~/assets/style/app.styl'],
   /*
   ** Customize the progress bar color

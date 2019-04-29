@@ -1,31 +1,34 @@
 <template>
-  <v-app dark>
-    <!--<v-navigation-drawer-->
-      <!--:mini-variant.sync="miniVariant"-->
-      <!--:clipped="clipped"-->
-      <!--v-model="drawer"-->
-      <!--fixed-->
-      <!--app-->
-    <!--&gt;-->
-      <!--<v-list>-->
-        <!--<v-list-tile-->
-          <!--router-->
-          <!--:to="item.to"-->
-          <!--:key="i"-->
-          <!--v-for="(item, i) in items"-->
-          <!--exact-->
-        <!--&gt;-->
-          <!--<v-list-tile-action>-->
-            <!--<v-icon v-html="item.icon"></v-icon>-->
-          <!--</v-list-tile-action>-->
-          <!--<v-list-tile-content>-->
-            <!--<v-list-tile-title v-text="item.title"></v-list-tile-title>-->
-          <!--</v-list-tile-content>-->
-        <!--</v-list-tile>-->
-      <!--</v-list>-->
-    <!--</v-navigation-drawer>-->
-    <v-toolbar fixed app :clipped-left="clipped">
-      <!--<v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>-->
+  <v-app dark id="darken">
+    <v-navigation-drawer
+      color="orange"
+      :clipped="clipped"
+      v-model="drawer"
+      fixed
+      app
+    >
+      <v-list>
+        <v-list-tile class="close-mob" @click="drawer = false">
+          X
+        </v-list-tile>
+        <v-list-tile
+          router
+          :to="item.to"
+          :key="i"
+          v-for="(item, i) in items"
+          exact
+        >
+          <v-list-tile-action>
+            <v-icon v-html="item.icon"></v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title v-text="item.title"></v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
+    <v-toolbar fixed app :clipped-left="clipped" class="navigation">
+      <v-toolbar-side-icon class="burger-button" @click="drawer = !drawer"></v-toolbar-side-icon>
       <!--<v-btn-->
         <!--icon-->
         <!--@click.stop="miniVariant = !miniVariant"-->
@@ -45,7 +48,8 @@
         <!--<v-icon>remove</v-icon>-->
       <!--</v-btn>-->
       <v-toolbar-title v-text="title"></v-toolbar-title>
-      <v-layout justify-center row wrap>
+      <!--{{drawer}}-->
+      <v-layout class="menu-list" justify-center row wrap>
         <v-btn
                 v-for="(item, i) in items"
                 :key="i"
@@ -57,44 +61,54 @@
           {{ item.title }}
         </v-btn>
       </v-layout>
-      <!--<v-spacer></v-spacer>-->
-      <!-- <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon>menu</v-icon>
-      </v-btn> -->
+     <!--<v-spacer></v-spacer>-->
+      <!--<v-btn-->
+        <!--icon-->
+        <!--@click.stop="rightDrawer = !rightDrawer"-->
+      <!--&gt;-->
+        <!--<v-icon>menu</v-icon>-->
+      <!--</v-btn>-->
     </v-toolbar>
-    <v-content>
+    <v-content class="content">
       <v-container fluid class="pa-0">
         <nuxt />
       </v-container>
     </v-content>
-    <v-navigation-drawer
-      temporary
-      :right="right"
-      v-model="rightDrawer"
-      fixed
-    >
-      <v-list>
-        <v-list-tile @click.native="right = !right">
-          <v-list-tile-action>
-            <v-icon light>compare_arrows</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
+    <!--<v-navigation-drawer-->
+      <!--temporary-->
+      <!--:right="right"-->
+      <!--v-model="rightDrawer"-->
+      <!--fixed-->
+    <!--&gt;-->
+      <!--<v-list>-->
+        <!--<v-list-tile @click.native="right = !right">-->
+          <!--<v-list-tile-action>-->
+            <!--<v-icon light>compare_arrows</v-icon>-->
+          <!--</v-list-tile-action>-->
+          <!--<v-list-tile-title>Switch drawer (click me)</v-list-tile-title>-->
+        <!--</v-list-tile>-->
+      <!--</v-list>-->
+    <!--</v-navigation-drawer>-->
     <!--<v-footer app>-->
       <!--<span>&copy; {{ new Date().getFullYear() }}</span>-->
     <!--</v-footer>-->
-    <template>
-      <Slide>
-        <a id="home" href="#">
-          <span>Home</span>
-        </a>
-      </Slide>
-    </template>
+    <!--<template>-->
+        <!--<no-ssr>-->
+          <!--<Slide>-->
+            <!--<v-layout justify-center column wrap>-->
+              <!--<v-btn class="pa-0 ma-1"-->
+                      <!--v-for="(item, i) in items"-->
+                      <!--:key="i"-->
+                      <!--:to="item.to"-->
+                      <!--color="white"-->
+                      <!--flat-->
+              <!--&gt;-->
+                <!--{{ item.title }}-->
+              <!--</v-btn>-->
+            <!--</v-layout>-->
+        <!--</Slide>-->
+       <!--</no-ssr>-->
+    <!--</template>-->
   </v-app>
 </template>
 
@@ -102,32 +116,80 @@
   export default {
     components: {
     },
+    mounted () {
+      this.width = document.getElementById('darken').clientWidth
+      window.addEventListener('resize', this.resize)
+      this.resize()
+    },
+    methods: {
+      resize () {
+        this.width = document.getElementById('darken').clientWidth
+      }
+    },
     data () {
       return {
-        clipped: false,
-        drawer: true,
+        width: '',
+        clipped: true,
+        drawer: false,
         fixed: true,
         items: [
-          { icon: 'apps', title: 'О Нас', to: '/' },
-          { icon: 'bubble_chart', title: 'Акции', to: '/akcii' },
-          { icon: 'bubble_chart', title: 'Где Найти', to: '/findus' },
-          { icon: 'bubble_chart', title: 'Резерв', to: '/reserv' },
-          { icon: 'bubble_chart', title: 'Меню', to: '/menu' },
-          { icon: 'bubble_chart', title: 'Кейтеринг', to: '/keitering' },
-          { icon: 'bubble_chart', title: 'Галерея', to: '/galery' }
+          { icon: 'home', title: 'О Нас', to: '/' },
+          { icon: 'whatshot', title: 'Акции', to: '/akcii' },
+          { icon: 'location_on', title: 'Где Найти', to: '/findus' },
+          { icon: 'check', title: 'Резерв', to: '/reserv' },
+          { icon: 'restaurant_menu', title: 'Меню', to: '/menu' },
+          { icon: 'drive_eta', title: 'Кейтеринг', to: '/keitering' },
+          { icon: 'photo_camera', title: 'Галерея', to: '/galery' }
         ],
         miniVariant: false,
         right: true,
         rightDrawer: false,
         title: 'DOIT'
       }
+    },
+    watch: {
+      width (val) {
+        console.log('myWidth', val)
+        if (val > 943) {
+          this.drawer = false
+        }
+      }
     }
   }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
+  .content{
+    background-image:url(~assets/fon/fon-min.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
   .v-toolbar__title{
     font-family: 'Monoton', cursive;
     font-size:32px;
+  }
+  .burger-button{
+    display:none;
+  }
+  .close-mob{
+    a{
+      justify-content:flex-end !important;
+    }
+  }
+  @media only screen and (max-width: 960px) {
+    /*.content{*/
+      /*padding-top: 0 !important;*/
+    /*}*/
+    .v-toolbar__content{
+      justify-content:space-between;
+    }
+    .menu-list{
+      display:none;
+    }
+    .burger-button{
+      display:block;
+    }
   }
 </style>

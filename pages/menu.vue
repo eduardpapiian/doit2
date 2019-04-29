@@ -2,33 +2,34 @@
 <div>
   <v-layout>
     <v-container grid-list-md text-xs-center>
+      <h1 class="mb-3 top-title">Актуальное меню кальян-баров DOIT</h1>
     <v-layout row wrap class="column">
-      <div>
-        <img src="~/assets/menu/1-1.jpg" alt="menu-1">
+      <div class="img-wrap">
+        <img src="~/assets/menu/1-1-min.jpg" alt="menu-1">
       </div>
-      <div>
-        <img src="~/assets/menu/2-2.jpg" alt="menu-1">
+      <div class="img-wrap">
+        <img src="~/assets/menu/2-2-min.jpg" alt="menu-1">
       </div>
-      <div>
-        <img src="~/assets/menu/3-3.jpg" alt="menu-1">
+      <div class="img-wrap">
+        <img src="~/assets/menu/3-3-min.jpg" alt="menu-1">
       </div>
-      <div>
-        <img src="~/assets/menu/4-4.jpg" alt="menu-1">
+      <div class="img-wrap">
+        <img src="~/assets/menu/4-4-min.jpg" alt="menu-1">
       </div>
-      <div>
-        <img src="~/assets/menu/5-5.jpg" alt="menu-1">
+      <div class="img-wrap">
+        <img src="~/assets/menu/5-5-min.jpg" alt="menu-1">
       </div>
-      <div>
-        <img src="~/assets/menu/6-6.jpg" alt="menu-1">
+      <div class="img-wrap">
+        <img src="~/assets/menu/6-6-min.jpg" alt="menu-1">
       </div>
-      <div>
-        <img src="~/assets/menu/7-7.jpg" alt="menu-1">
+      <div class="img-wrap">
+        <img src="~/assets/menu/7-7-min.jpg" alt="menu-1">
       </div>
-      <div>
-        <img src="~/assets/menu/8-8.jpg" alt="menu-1">
+      <div class="img-wrap">
+        <img src="~/assets/menu/8-8-min.jpg" alt="menu-1">
       </div>
-      <div>
-        <img src="~/assets/menu/9-9.jpg" alt="menu-1">
+      <div class="img-wrap">
+        <img src="~/assets/menu/9-9-min.jpg" alt="menu-1">
       </div>
     </v-layout>
   </v-container>
@@ -43,6 +44,19 @@
 <script>
 import Footer from '~/components/Footer.vue'
 export default {
+  head: {
+    title: 'Меню - DOIT Сеть кальян-баров',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: 'Меню сети кальян-баров DOIT с актуальными ценами. Вы можете уже заранее сделать свой выбор' },
+      { name: 'og:title', content: 'Меню - DOIT Сеть кальян-баров' },
+      { name: 'og:description', content: 'Меню сети кальян-баров DOIT с актуальными ценами. Вы можете уже заранее сделать свой выбор' },
+      { name: 'og:type', content: 'website' },
+      { name: 'og:url', content: 'https://doit.kiev.ua/menu' },
+      { name: 'og:image', content: 'http://localhost:3000' + require('~/assets/logo.jpg') }
+    ]
+  },
   data () {
     return {
     }
@@ -61,5 +75,12 @@ export default {
 .column{
   display:flex;
   justify-content:center;
+  .img-wrap{
+    max-width:1000px;
+    margin:0 auto;
+    img{
+      width:100%;
+    }
+  }
 }
 </style>
