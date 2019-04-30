@@ -28,7 +28,7 @@ module.exports = {
   serverMiddleware: ['~/api/telegram.js'],
   loading: { color: '#3B8070' },
   modules: [
-    '@nuxtjs/sitemap','@nuxtjs/robots'
+    '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxtjs/google-analytics'
   ],
   sitemap: {
     path: '/sitemap.xml',
@@ -55,6 +55,9 @@ module.exports = {
   robots: {
     UserAgent: '*',
     Disallow: '/reserv'
+  },
+  googleAnalytics: {
+    id: 'UA-102510381-1'
   },
   /*
   ** Build configuration
