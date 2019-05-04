@@ -1,12 +1,12 @@
 <template>
   <div class="main-wrapper">
-    <quick-menu
-            :menu-count="count"
-            :icon-class="icons"
-            :menu-url-list="list"
-            :backgroundColor="backgroundColor"
-            :position="position"
-    ></quick-menu>
+    <!--<quick-menu-->
+            <!--:menu-count="count"-->
+            <!--:icon-class="icons"-->
+            <!--:menu-url-list="list"-->
+            <!--:backgroundColor="backgroundColor"-->
+            <!--:position="position"-->
+    <!--&gt;</quick-menu>-->
     <div class="about-us-block">
         <div class="title-block">
             <h1 class="desktop-title">Сеть кальян-баров DOIT в Киеве</h1>
@@ -190,12 +190,12 @@ export default {
   },
   data () {
     return {
-      count: 4,
-      icons: [ 'fa fa-home', 'fa fa-comment', 'fa fa-code', 'fa fa-envelope' ],
-      list: [{ 'isLink': false }, { 'isLink': true, url: '/doo' }, { 'isLink': true, url: '/foo' }, { 'isLink': false }],
-      backgroundColor: '#ff9800',
-      color: '#ffffff',
-      position: 'bottom-right',
+      // count: 4,
+      // icons: [ 'fa fa-home', 'fa fa-comment', 'fa fa-code', 'fa fa-envelope' ],
+      // list: [{ 'isLink': false }, { 'isLink': true, url: '/doo' }, { 'isLink': true, url: '/foo' }, { 'isLink': false }],
+      // backgroundColor: '#ff9800',
+      // color: '#ffffff',
+      // position: 'bottom-right',
       items: [
         {
           title: 'Широкий выбор кальянов',
