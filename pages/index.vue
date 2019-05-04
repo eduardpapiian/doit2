@@ -67,7 +67,6 @@
   import Parallax from 'vue-parallaxy'
   import aboutUsBlock from '~/components/aboutUsBlock.vue'
   import Footer from '~/components/Footer.vue'
-
   export default {
     components: {
       Parallax,

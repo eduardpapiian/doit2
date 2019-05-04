@@ -1,21 +1,15 @@
 <template>
   <div class="main-wrapper">
+    <quick-menu
+            :menu-count="count"
+            :icon-class="icons"
+            :menu-url-list="list"
+            :backgroundColor="backgroundColor"
+            :position="position"
+    ></quick-menu>
     <div class="about-us-block">
         <div class="title-block">
             <h1 class="desktop-title">Сеть кальян-баров DOIT в Киеве</h1>
-          <v-expansion-panel class="mob-accordion">
-            <v-expansion-panel-content
-                    v-for="(item,i) in items"
-                    :key="i"
-            >
-              <template v-slot:header>
-                <div>{{item.title}}</div>
-              </template>
-              <v-card>
-                <v-card-text>{{item.description}}</v-card-text>
-              </v-card>
-            </v-expansion-panel-content>
-          </v-expansion-panel>
         </div>
       <div class="flex first-block">
       <div class="left-block">
@@ -116,6 +110,19 @@
           </div>
         </div>
       </div>
+      <v-expansion-panel class="mob-accordion">
+        <v-expansion-panel-content
+                v-for="(item,i) in items"
+                :key="i"
+        >
+          <template v-slot:header>
+            <div>{{item.title}}</div>
+          </template>
+          <v-card>
+            <v-card-text>{{item.description}}</v-card-text>
+          </v-card>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
     </div>
     <div class="find-us">
       <h2>Где Нас Найти</h2>
@@ -152,6 +159,8 @@
 
 <script>
 import Parallax from 'vue-parallaxy'
+import quickMenu from 'vue-quick-menu'
+import 'font-awesome/css/font-awesome.min.css'
 // import { BadgerAccordion, BadgerAccordionItem } from 'vue-badger-accordion'
 
 export default {
@@ -174,12 +183,19 @@ export default {
     panels.forEach(panel => panel.addEventListener('transitionend', toggleActive))
   },
   components: {
-    Parallax
+    Parallax,
+    quickMenu
     // BadgerAccordion,
     // BadgerAccordionItem
   },
   data () {
     return {
+      count: 4,
+      icons: [ 'fa fa-home', 'fa fa-comment', 'fa fa-code', 'fa fa-envelope' ],
+      list: [{ 'isLink': false }, { 'isLink': true, url: '/doo' }, { 'isLink': true, url: '/foo' }, { 'isLink': false }],
+      backgroundColor: '#ff9800',
+      color: '#ffffff',
+      position: 'bottom-right',
       items: [
         {
           title: 'Широкий выбор кальянов',
@@ -632,5 +648,8 @@ h2{
       padding-left:0;
       padding-right:0;
     }
+  }
+  .quick-menu{
+    z-index:1;
   }
 </style>

@@ -113,8 +113,11 @@
 </template>
 
 <script>
+  import quickMenu from 'vue-quick-menu'
+  import 'font-awesome/css/font-awesome.min.css'
   export default {
     components: {
+      quickMenu
     },
     mounted () {
       this.width = document.getElementById('darken').clientWidth
@@ -128,6 +131,7 @@
     },
     data () {
       return {
+        isOpenNewTab: false,
         width: '',
         clipped: true,
         drawer: false,
@@ -179,9 +183,19 @@
     }
   }
   @media only screen and (max-width: 960px) {
-    /*.content{*/
-      /*padding-top: 0 !important;*/
-    /*}*/
+    .navigation{
+      height: 64px !important;
+      .v-toolbar__content{
+        height:100% !important;
+        button {
+          .v-btn__content{
+            .v-icon{
+              font-size:40px;
+            }
+          }
+        }
+      }
+    }
     .v-toolbar__content{
       justify-content:space-between;
     }
@@ -190,6 +204,10 @@
     }
     .burger-button{
       display:block;
+    }
+    .primary--text{
+      color: rgb(255, 152, 0) !important;
+      caret-color: rgb(255, 152, 0) !important;
     }
   }
 </style>

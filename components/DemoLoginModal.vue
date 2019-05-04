@@ -1,7 +1,7 @@
 <template>
     <no-ssr>
         <div>
-          <sweet-modal ref="openVdnhModal" modal-theme="dark" overlay-theme="dark" :width="modalWidth" class="modal-vdnh" v-on:close="closeModal">
+          <sweet-modal ref="openVdnhModal" modal-theme="dark" overlay-theme="dark" backdrop="false" :width="modalWidth" class="modal-vdnh" v-on:close="closeModal">
               <div class="box">
                   <div class="box-part" id="bp-left">
                       <div class="partition" id="partition-register">
@@ -520,6 +520,29 @@
             width: 100% !important;
         }
     }
+      input[type="color"],
+      input[type="date"],
+      input[type="datetime"],
+      input[type="datetime-local"],
+      input[type="email"],
+      input[type="month"],
+      input[type="number"],
+      input[type="password"],
+      input[type="search"],
+      input[type="tel"],
+      input[type="text"],
+      input[type="time"],
+      input[type="url"],
+      input[type="week"],
+      select:focus,
+      textarea {
+          font-size: 16px;
+      }
+  }
+  @media only screen and (max-width: 400px){
+      .sweet-modal{
+          width:100% !important;
+      }
   }
 }
 </style>

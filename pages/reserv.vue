@@ -483,7 +483,6 @@ $facebook_color: #3880FF;
     border-radius: 2px;
     box-sizing: border-box;
     color: #8b8c8d;
-    font-size: 0;
 
     .box-part {
         display: inline-block;
@@ -562,7 +561,7 @@ $facebook_color: #3880FF;
         box-sizing: border-box;
         margin-bottom: 4px;
         width: 100%;
-        font-size: 12px;
+        font-size: 16px;
         line-height: 2;
         border: 0;
         border-bottom: 1px solid #DDDEDF;
@@ -633,6 +632,24 @@ $facebook_color: #3880FF;
 .pop-out-leave-active {
     opacity: 0;
     transform: translateY(24px);
+}
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+select:focus,
+textarea {
+    font-size: 16px !important;
 }
 </style>
 
