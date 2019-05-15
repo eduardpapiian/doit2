@@ -113,11 +113,11 @@
 </template>
 
 <script>
-  import quickMenu from 'vue-quick-menu'
+  // import quickMenu from 'vue-quick-menu'
   import 'font-awesome/css/font-awesome.min.css'
   export default {
     components: {
-      quickMenu
+      // quickMenu
     },
     mounted () {
       this.width = document.getElementById('darken').clientWidth

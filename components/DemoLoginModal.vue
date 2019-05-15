@@ -421,6 +421,9 @@
                 padding: 0 20px;
                 box-sizing: border-box;
                 padding-bottom: 20px;
+                .button{
+                    margin-bottom:40px;
+                }
             }
         }
 
