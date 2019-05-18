@@ -20,6 +20,9 @@
                             <a class="links" href="https://www.facebook.com/doitkpi/" target="_blank"><fb/><span>DOIT_KPI</span></a>
                             <a class="links" href="https://www.instagram.com/doit_kpi/" target="_blank"><inst/><span>DOIT_KPI</span></a>
                         </div>
+                        <div>
+                            Почта: doit_hookah@ukr.net
+                        </div>
                     </v-card-text>
 
                     <v-card-text class="white--text pt-0">

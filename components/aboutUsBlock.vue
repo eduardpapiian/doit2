@@ -1,5 +1,5 @@
 <template>
-  <div class="main-wrapper">
+  <div :loading="loading" :disabled="loading" class="main-wrapper">
     <!--<quick-menu-->
             <!--:menu-count="count"-->
             <!--:icon-class="icons"-->
@@ -192,6 +192,7 @@ export default {
   },
   data () {
     return {
+      loading: true,
       // count: 4,
       // icons: [ 'fa fa-home', 'fa fa-comment', 'fa fa-code', 'fa fa-envelope' ],
       // list: [{ 'isLink': false }, { 'isLink': true, url: '/doo' }, { 'isLink': true, url: '/foo' }, { 'isLink': false }],
