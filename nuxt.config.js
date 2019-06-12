@@ -20,7 +20,7 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Monoton:300,400,500,700|Material+Icons' }
     ]
   },
-  plugins: ['~/plugins/vuetify.js', '~/plugins/vue2-google-maps.js', { src: '~plugins/sweet-modal', ssr: false }, { src: '~plugins/ga.js', ssr: false }],
+  plugins: ['~/plugins/vuetify.js', '~/plugins/vue2-google-maps.js', { src: '~plugins/sweet-modal', ssr: false }, { src: '~plugins/metrika', ssr: false }, { src: '~plugins/ga.js', ssr: false }],
   css: ['~/assets/style/app.styl'],
   /*
   ** Customize the progress bar color
@@ -28,18 +28,7 @@ module.exports = {
   serverMiddleware: ['~/api/telegram.js'],
   loading: { color: '#3B8070' },
   modules: [
-    '@nuxtjs/sitemap', '@nuxtjs/robots', [
-      '@nuxtjs/yandex-metrika',
-      {
-        id: '54037297',
-        webvisor: true
-        // clickmap:true,
-        // useCDN:false,
-        // trackLinks:true,
-        // accurateTrackBounce:true,
-      }
-    ]
-  ],
+    '@nuxtjs/sitemap', '@nuxtjs/robots'],
   sitemap: {
     path: '/sitemap.xml',
     hostname: 'https://doit.kiev.ua',
