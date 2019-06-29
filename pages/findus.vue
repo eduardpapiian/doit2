@@ -36,7 +36,7 @@
 
           <v-card-actions>
             <div class="column-right">
-              <v-btn class="street-btn" flat href="https://goo.gl/maps/hExcFo55cLbWP7Do7" target="_blank" color="orange">Провиантская 3</v-btn>
+              <v-btn class="street-btn" flat href="https://goo.gl/maps/dypkU3YYWRUPhw7F7" target="_blank" color="orange">Провиантская 3</v-btn>
               <v-btn flat href="tel:+380970712426">+38 (097) 071 24 26</v-btn>
               <v-btn flat href="tel:+380995095072">+38 (099) 509 50 72</v-btn>
               <v-btn flat @click="openKpiModal" color="orange">Резерв DOIT_KPI онлайн</v-btn>

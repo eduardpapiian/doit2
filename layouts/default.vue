@@ -109,20 +109,40 @@
         <!--</Slide>-->
        <!--</no-ssr>-->
     <!--</template>-->
+    <!-- Yandex.Metrika counter -->
+    <div><img src="https://mc.yandex.ru/watch/54037297" style="position:absolute; left:-9999px;" alt="" /></div>
+    <!-- /Yandex.Metrika counter -->
+    <loading :active.sync="loading"
+             color="#ff9800"
+             :height="heightLoader"
+             :width="widthLoader"
+             loader="spinner"
+             background-color="black"
+             :opacity="opacity"
+             :is-full-page="fullPage"></loading>
   </v-app>
 </template>
+<!-- built files will be auto injected -->
 
 <script>
+  // Import component
+  import Loading from 'vue-loading-overlay'
+  // Import stylesheet
+  import 'vue-loading-overlay/dist/vue-loading.css'
   // import quickMenu from 'vue-quick-menu'
   import 'font-awesome/css/font-awesome.min.css'
   export default {
     components: {
       // quickMenu
+      Loading
     },
     mounted () {
       this.width = document.getElementById('darken').clientWidth
       window.addEventListener('resize', this.resize)
       this.resize()
+      setTimeout(() => {
+        this.loading = false
+      }, 1000)
     },
     methods: {
       resize () {
@@ -131,7 +151,12 @@
     },
     data () {
       return {
+        loading: true,
+        fullPage: true,
         isOpenNewTab: false,
+        opacity: 0.9,
+        heightLoader: 100,
+        widthLoader: 100,
         width: '',
         clipped: true,
         drawer: false,

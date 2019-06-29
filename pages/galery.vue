@@ -1,40 +1,40 @@
 <template>
-  <!--<div>-->
-    <!--<vue-instagram token="2940749068.1677ed0.439891fc821f473b8376013e4543acda" :count="5" :tags="['hashtag1', 'hashtag2']" mediaType="image">-->
-      <!--<template slot="feeds" slot-scope="props">-->
-        <!--<li class="fancy-list"> {{ props.feed.link }} </li>-->
-      <!--</template>-->
-      <!--<template slot="error" slot-scope="props">-->
-        <!--<div class="fancy-alert"> {{ props.error.error_message }} </div>-->
-      <!--</template>-->
-    <!--</vue-instagram>-->
-  <!--</div>-->
   <div>
-    <v-layout>
-      <v-container grid-list-md text-xs-center>
-        <h1 class="mb-3 top-title">Фото-галерея с Нашими гостями</h1>
-        <v-layout class="wrapp" row wrap>
-        <gallery :images="images" :index="index" @close="index = null"></gallery>
-          <div
-                  class="image"
-                  v-for="(image, imageIndex) in images"
-                  :key="imageIndex"
-                  @click="index = imageIndex"
-                  :style="{ backgroundImage: 'url(' + image + ')', width: '250px', height: '200px' }"
-          ></div>
-        </v-layout>
-      </v-container>
-    </v-layout>
-    <div>
-      <Footer/>
-    </div>
+    <vue-instagram token="2940749068.6268451.400ab9a0bc974ef78fb17be34a632197" :count="5" :tags="['hashtag1', 'hashtag2']" mediaType="image">
+      <template slot="feeds" slot-scope="props">
+        <li class="fancy-list"> {{ props.feed.link }} </li>
+      </template>
+      <template slot="error" slot-scope="props">
+        <div class="fancy-alert"> {{ props.error.error_message }} </div>
+      </template>
+    </vue-instagram>
   </div>
+  <!--<div>-->
+    <!--<v-layout>-->
+      <!--<v-container grid-list-md text-xs-center>-->
+        <!--<h1 class="mb-3 top-title">Фото-галерея с Нашими гостями</h1>-->
+        <!--<v-layout class="wrapp" row wrap>-->
+        <!--<gallery :images="images" :index="index" @close="index = null"></gallery>-->
+          <!--<div-->
+                  <!--class="image"-->
+                  <!--v-for="(image, imageIndex) in images"-->
+                  <!--:key="imageIndex"-->
+                  <!--@click="index = imageIndex"-->
+                  <!--:style="{ backgroundImage: 'url(' + image + ')', width: '250px', height: '200px' }"-->
+          <!--&gt;</div>-->
+        <!--</v-layout>-->
+      <!--</v-container>-->
+    <!--</v-layout>-->
+    <!--<div>-->
+      <!--<Footer/>-->
+    <!--</div>-->
+  <!--</div>-->
 </template>
 
 
   <script>
-// import VueInstagram from 'vue-instagram'
-import VueGallery from 'vue-gallery'
+import VueInstagram from 'vue-instagram'
+// import VueGallery from 'vue-gallery'
 import Footer from '~/components/Footer.vue'
 export default {
   head: {
@@ -52,34 +52,34 @@ export default {
   },
   data () {
     return {
-      images: [
-        'https://doit.kiev.ua' + require('~/assets/gallery/1-min.jpg'),
-        'https://doit.kiev.ua' + require('~/assets/gallery/2-min.jpg'),
-        'https://doit.kiev.ua' + require('~/assets/gallery/3-min.jpg'),
-        'https://doit.kiev.ua' + require('~/assets/gallery/4-min.jpg'),
-        'https://doit.kiev.ua' + require('~/assets/gallery/5-min.jpg'),
-        'https://doit.kiev.ua' + require('~/assets/gallery/6-min.jpg'),
-        'https://doit.kiev.ua' + require('~/assets/gallery/7-min.jpg'),
-        'https://doit.kiev.ua' + require('~/assets/gallery/8-min.jpg'),
-        'https://doit.kiev.ua' + require('~/assets/gallery/9-min.jpg'),
-        'https://doit.kiev.ua' + require('~/assets/gallery/10-min.jpg'),
-        'https://doit.kiev.ua' + require('~/assets/gallery/11-min.jpg'),
-        'https://doit.kiev.ua' + require('~/assets/gallery/12-min.jpg'),
-        'https://doit.kiev.ua' + require('~/assets/gallery/13-min.jpg'),
-        'https://doit.kiev.ua' + require('~/assets/gallery/14-min.jpg'),
-        'https://doit.kiev.ua' + require('~/assets/gallery/15-min.jpg'),
-        'https://doit.kiev.ua' + require('~/assets/gallery/16-min.jpg'),
-        'https://doit.kiev.ua' + require('~/assets/gallery/17-min.jpg'),
-        'https://doit.kiev.ua' + require('~/assets/gallery/18-min.jpg')
-        // 'https://doit.kiev.ua' + require('~/assets/gallery/19-min.jpg'),
-        // 'https://doit.kiev.ua' + require('~/assets/gallery/20-min.jpg')
-      ],
+      // images: [
+      //   'https://doit.kiev.ua' + require('~/assets/gallery/1-min.jpg'),
+      //   'https://doit.kiev.ua' + require('~/assets/gallery/2-min.jpg'),
+      //   'https://doit.kiev.ua' + require('~/assets/gallery/3-min.jpg'),
+      //   'https://doit.kiev.ua' + require('~/assets/gallery/4-min.jpg'),
+      //   'https://doit.kiev.ua' + require('~/assets/gallery/5-min.jpg'),
+      //   'https://doit.kiev.ua' + require('~/assets/gallery/6-min.jpg'),
+      //   'https://doit.kiev.ua' + require('~/assets/gallery/7-min.jpg'),
+      //   'https://doit.kiev.ua' + require('~/assets/gallery/8-min.jpg'),
+      //   'https://doit.kiev.ua' + require('~/assets/gallery/9-min.jpg'),
+      //   'https://doit.kiev.ua' + require('~/assets/gallery/10-min.jpg'),
+      //   'https://doit.kiev.ua' + require('~/assets/gallery/11-min.jpg'),
+      //   'https://doit.kiev.ua' + require('~/assets/gallery/12-min.jpg'),
+      //   'https://doit.kiev.ua' + require('~/assets/gallery/13-min.jpg'),
+      //   'https://doit.kiev.ua' + require('~/assets/gallery/14-min.jpg'),
+      //   'https://doit.kiev.ua' + require('~/assets/gallery/15-min.jpg'),
+      //   'https://doit.kiev.ua' + require('~/assets/gallery/16-min.jpg'),
+      //   'https://doit.kiev.ua' + require('~/assets/gallery/17-min.jpg'),
+      //   'https://doit.kiev.ua' + require('~/assets/gallery/18-min.jpg')
+      //   // 'https://doit.kiev.ua' + require('~/assets/gallery/19-min.jpg'),
+      //   // 'https://doit.kiev.ua' + require('~/assets/gallery/20-min.jpg')
+      // ],
       index: null
     }
   },
   components: {
-    // VueInstagram,
-    'gallery': VueGallery,
+    VueInstagram,
+    // 'gallery': VueGallery,
     Footer
   },
   methods: {

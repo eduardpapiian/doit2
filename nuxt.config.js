@@ -28,13 +28,13 @@ module.exports = {
   serverMiddleware: ['~/api/telegram.js'],
   loading: { color: '#3B8070' },
   modules: [
-    '@nuxtjs/sitemap', '@nuxtjs/robots', [
+    '@nuxtjs/sitemap', '@nuxtjs/robots',
+    [
       '@nuxtjs/yandex-metrika',
       {
         id: '54037297',
         webvisor: true,
         clickmap: true,
-        useCDN: false,
         trackLinks: true,
         accurateTrackBounce: true
       }
