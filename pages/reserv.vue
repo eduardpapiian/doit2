@@ -633,24 +633,6 @@ $facebook_color: #3880FF;
     opacity: 0;
     transform: translateY(24px);
 }
-input[type="color"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="email"],
-input[type="month"],
-input[type="number"],
-input[type="password"],
-input[type="search"],
-input[type="tel"],
-input[type="text"],
-input[type="time"],
-input[type="url"],
-input[type="week"],
-select:focus,
-textarea {
-    font-size: 16px !important;
-}
 </style>
 
 <style lang="less">
@@ -664,6 +646,27 @@ textarea {
       }
       .box-part {
           width: 100% !important;
+      }
+      .v-input{
+          font-size: 17px !important;
+      }
+      input[type="color"],
+      input[type="date"],
+      input[type="datetime"],
+      input[type="datetime-local"],
+      input[type="email"],
+      input[type="month"],
+      input[type="number"],
+      input[type="password"],
+      input[type="search"],
+      input[type="tel"],
+      input[type="text"],
+      input[type="time"],
+      input[type="url"],
+      input[type="week"],
+      select:focus,
+      textarea {
+          font-size: 17px !important;
       }
   }
 </style>

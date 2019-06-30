@@ -539,7 +539,7 @@
       input[type="week"],
       select:focus,
       textarea {
-          font-size: 16px;
+          font-size: 17px;
       }
   }
   @media only screen and (max-width: 400px){

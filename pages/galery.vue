@@ -1,40 +1,44 @@
 <template>
-  <!--<div>-->
-    <!--<vue-instagram token="2940749068.1677ed0.439891fc821f473b8376013e4543acda" :count="5" :tags="['hashtag1', 'hashtag2']" mediaType="image">-->
-      <!--<template slot="feeds" slot-scope="props">-->
-        <!--<li class="fancy-list"> {{ props.feed.link }} </li>-->
-      <!--</template>-->
-      <!--<template slot="error" slot-scope="props">-->
-        <!--<div class="fancy-alert"> {{ props.error.error_message }} </div>-->
-      <!--</template>-->
-    <!--</vue-instagram>-->
-  <!--</div>-->
-  <div>
-    <v-layout>
-      <v-container grid-list-md text-xs-center>
-        <h1 class="mb-3 top-title">Фото-галерея с Нашими гостями</h1>
-        <v-layout class="wrapp" row wrap>
-        <gallery :images="images" :index="index" @close="index = null"></gallery>
-          <div
-                  class="image"
-                  v-for="(image, imageIndex) in images"
-                  :key="imageIndex"
-                  @click="index = imageIndex"
-                  :style="{ backgroundImage: 'url(' + image + ')', width: '250px', height: '200px' }"
-          ></div>
-        </v-layout>
-      </v-container>
-    </v-layout>
-    <div>
-      <Footer/>
-    </div>
-  </div>
+      <v-layout>
+        <v-flex container grid-list-md text-xs-center>
+          <v-card>
+            <v-container grid-list-sm >
+              <v-layout row wrap>
+                <v-flex
+                        v-for="n in images"
+                        :key="n"
+                        xs4
+                        d-flex
+                >
+                  <v-card flat tile class="d-flex">
+                    <v-img
+                            :src="n"
+                            :lazy-src="n"
+                            aspect-ratio="1"
+                            class="grey lighten-2"
+                    >
+                      <template v-slot:placeholder>
+                        <v-layout
+                                fill-height
+                                align-center
+                                justify-center
+                                ma-0
+                        >
+                          <!--<v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>-->
+                        </v-layout>
+                      </template>
+                    </v-img>
+                  </v-card>
+                </v-flex>
+              </v-layout>
+            </v-container>
+          </v-card>
+        </v-flex>
+      </v-layout>
 </template>
 
 
   <script>
-// import VueInstagram from 'vue-instagram'
-import VueGallery from 'vue-gallery'
 import Footer from '~/components/Footer.vue'
 export default {
   head: {
@@ -78,12 +82,12 @@ export default {
     }
   },
   components: {
-    // VueInstagram,
-    'gallery': VueGallery,
     Footer
   },
   methods: {
-
+    triggerClick () {
+      alert('hello')
+    }
   }
 }
 </script>
@@ -101,4 +105,10 @@ export default {
     border: 1px solid #ebebeb;
     margin: 5px;
   }
+  @media only screen and (min-width: 960px){
+    .container {
+      max-width: 900px;
+    }
+  }
+
 </style>
