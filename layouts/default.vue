@@ -110,7 +110,7 @@
        <!--</no-ssr>-->
     <!--</template>-->
     <!-- Yandex.Metrika counter -->
-    <div><img src="https://mc.yandex.ru/watch/54037297" style="position:absolute; left:-9999px;" alt="" /></div>
+    <!--<div><img src="https://mc.yandex.ru/watch/54037297" style="position:absolute; left:-9999px;" alt="" /></div>-->
     <!-- /Yandex.Metrika counter -->
     <loading :active.sync="loading"
              color="#ff9800"
