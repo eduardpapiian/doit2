@@ -7,13 +7,11 @@
       <v-flex class="blocks" xs6>
         <v-card>
           <img class="img" src="~/assets/find-us/doit-min.jpg" alt="doit">
-
         <v-card-title primary-title class="right-block-text">
           <div>
             <h2 class="headline mb-0">DOIT ВДНХ <span class="time">C 12:00 - 02:00</span></h2>
           </div>
         </v-card-title>
-
         <v-card-actions class="right-block-btn">
           <div class="column-left">
             <v-btn class="street-btn" flat href="https://goo.gl/maps/zKn1JJE8Nj72" target="_blank" color="orange">Голосеевский проспект 130/57</v-btn>
