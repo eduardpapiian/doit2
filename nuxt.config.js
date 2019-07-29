@@ -28,8 +28,10 @@ module.exports = {
   serverMiddleware: ['~/api/telegram.js'],
   loading: { color: '#3B8070' },
   modules: [
-    '@nuxtjs/sitemap', '@nuxtjs/robots'
-    // [
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
+    '@nuxtjs/pwa'
+    // [ 
     //   '@nuxtjs/yandex-metrika',
     //   {
     //     id: '54037297',
@@ -40,6 +42,16 @@ module.exports = {
     //   }
     // ]
   ],
+  icon: {
+    iconSrc: './static/favicon.png',
+  },
+  manifest: {
+    short_name: 'DOIT',
+    name:'DOIT Сеть кальян-баров',
+    start_url: '/',
+    background_color: '#303030',
+    theme_color: '#303030'
+  },
   sitemap: {
     path: '/sitemap.xml',
     hostname: 'https://doit.kiev.ua',
