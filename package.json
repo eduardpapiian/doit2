@@ -1,8 +1,8 @@
 {
   "name": "doit.kiev.ua",
   "version": "1.0.0",
-  "description": "Nuxt.js + Vuetify.js project",
-  "author": "mikroffon",
+  "description": "Сеть кальян-баров на ВДНХ и КПИ, с ярким дизайнерским оформление интерьера.",
+  "author": "doit.kiev.ua",
   "private": true,
   "scripts": {
     "dev": "nuxt",
