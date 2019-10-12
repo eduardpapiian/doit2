@@ -8,9 +8,9 @@ app.get('/', (req, res, next) => {
 
 app.use(bodyParser.json())
 app.post('/postvdnh', async (req, res, next) => {
-  // console.log(req.body)
-  const token = '746587611:AAGQWwF6gI-aolduxr72frF9VXSOc6EmXm8'
-  const chatId = '-357496791'
+  const token = process.env.VDNH_TOKEN
+  const chatId = process.env.VDNH_CHAT_ID
+  console.log(token, chatId)
   const axios = require('axios')
   let myData = encodeURIComponent("<b>Имя: </b>"+ req.body.name + "\n<b>Телефон: </b>"+ req.body.phone + "\n<b>Число: </b>"+ req.body.date + "\n<b>Время: </b>" + req.body.time + "\n<b>Гостей: </b>" + req.body.guest + "\n<b>Стол: </b>"+ req.body.table + "\n<b>Пожелания: </b>"+ req.body.wishes)
 
@@ -24,8 +24,8 @@ app.post('/postvdnh', async (req, res, next) => {
 
 app.post('/postkpi', async (req, res, next) => {
   // console.log(req.body)
-  const token = '822465834:AAHyV2e8b20hQsLHtJjORUKNu8IzFlOV79c'
-  const chatId = '-388370787'
+  const token = process.env.KPI_TOKEN
+  const chatId = process.env.KPI_CHAT_ID
   const axios = require('axios')
   let myData = encodeURIComponent("<b>Имя: </b>"+ req.body.name + "\n<b>Телефон: </b>"+ req.body.phone + "\n<b>Число: </b>"+ req.body.date + "\n<b>Время: </b>" + req.body.time + "\n<b>Гостей: </b>" + req.body.guest + "\n<b>Стол: </b>"+ req.body.table + "\n<b>Пожелания: </b>"+ req.body.wishes)
 

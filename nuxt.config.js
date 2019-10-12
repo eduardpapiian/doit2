@@ -1,3 +1,5 @@
+const env = require('dotenv').config()
+// console.log('enx', env)
 module.exports = {
   /*
   ** Headers of the page
@@ -20,6 +22,7 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Monoton:300,400,500,700|Material+Icons' }
     ]
   },
+  env: env.parsed,
   plugins: ['~/plugins/vuetify.js', '~/plugins/vue2-google-maps.js', { src: '~plugins/sweet-modal', ssr: false }, { src: '~plugins/ga.js', ssr: false }],
   css: ['~/assets/style/app.styl'],
   /*
@@ -31,7 +34,7 @@ module.exports = {
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
     '@nuxtjs/pwa'
-    // [ 
+    // [
     //   '@nuxtjs/yandex-metrika',
     //   {
     //     id: '54037297',
@@ -47,7 +50,7 @@ module.exports = {
   },
   manifest: {
     short_name: 'DOIT',
-    name:'DOIT Сеть кальян-баров',
+    name: 'DOIT Сеть кальян-баров',
     start_url: '/',
     background_color: '#303030',
     theme_color: '#303030'
