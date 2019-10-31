@@ -6,7 +6,6 @@
             <!--:menu-url-list="list"-->
             <!--:backgroundColor="backgroundColor"-->
             <!--:position="position"-->
-
     <!--&gt;</quick-menu>-->
     <div class="about-us-block">
         <div class="title-block">
