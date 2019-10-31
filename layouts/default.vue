@@ -162,7 +162,7 @@
         drawer: false,
         fixed: true,
         items: [
-          { icon: 'home', title: 'О Нас 1', to: '/' },
+          { icon: 'home', title: 'О Нас', to: '/' },
           { icon: 'whatshot', title: 'Акции', to: '/akcii' },
           { icon: 'location_on', title: 'Где Найти', to: '/findus' },
           { icon: 'check', title: 'Резерв', to: '/reserv' },
