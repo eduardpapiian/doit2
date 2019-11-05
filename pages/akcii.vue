@@ -3,7 +3,7 @@
   <v-layout>
     <v-container grid-list-md text-xs-center>
       <h1 class="mb-3">Акции кальян-баров DOIT 1</h1>
-      
+
       <v-layout row wrap class="justify-center">
         <v-flex xs6 class="card">
           <v-hover>
