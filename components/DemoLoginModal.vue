@@ -108,6 +108,7 @@
           </sweet-modal>
         <sweet-modal modal-theme="dark" ref="addNot">
             Внимание! При резерве вип-комнаты действует система депозита. Обязательный заказ на сумму не менее 800 грн.
+            Время резерва неограниченно, за исключением, если вип-комната, не была забронирована минимум через 4 часа, с момента Вашего прихода<br>
             <v-btn color="success" slot="button" v-on:click="close">OK</v-btn>
         </sweet-modal>
          <sweet-modal ref="success" modal-theme="dark" icon="success">
