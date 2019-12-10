@@ -4,6 +4,27 @@
     <v-container grid-list-md text-xs-center>
       <h1 class="mb-3">Акции кальян-баров DOIT</h1>
       <v-layout row wrap class="justify-center">
+        <v-flex xs12 class="card">
+          <v-hover>
+            <v-card
+                    slot-scope="{ hover }"
+                    :class="`elevation-${hover ? 12 : 2}`">
+              <img class="img" src="~/assets/akcii/topimg.jpg" alt="hookahs">
+
+              <v-card-title primary-title>
+                <div class="left-block-text">
+                  <h2 class="headline mb-0">50% скидка на кальян в DOIT KPI</h2>
+                  <div class="text"> {{ firstTextKpi }} </div>
+                </div>
+              </v-card-title>
+
+              <v-card-actions class="right-block-btn mob-column">
+                <v-btn flat href="tel:+380970712426" color="orange"><span>КПИ: </span> +38 (097) 071 24 26</v-btn>
+                <v-btn flat @click="openKpiModal" color="orange">Резерв DOIT_KPI</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-hover>
+        </v-flex>
         <v-flex xs6 class="card">
           <v-hover>
           <v-card
@@ -119,6 +140,7 @@
     data () {
       return {
         isVdnh: true,
+        firstTextKpi: 'C Понедельника по пятницу в DOIT на Провиантской 3 действует акция: с 12:00-18:00 на кальяны скидка 50% Serbetli, Afzal, Fusion, Adalya, Al Fakher, Fasil: 90грн',
         firstText: 'C Понедельника по четверг действует акция: с 12:00-17:00 на кальяны скидка 30% Serbetli, Afzal, Fusion, Adalya, Al Fakher, Fasil: 126грн. Дымный с нетерпением ждет Тебя в гостях',
         secondText: 'Именинники в нашем баре не останутся без подарков Отмечайте свой День Рождения у нас, и получайте кальян в подарок. Просим при себе имень документ, подтверждающий дату рождения',
         thirdTExt: 'BeerPong - это игра для любителей пива, в которой пиво принимает самое непосредственное участие. Но в первую очередь - это игра на координацию и ловкость. Для всех любителей будут проводиться интереснейшие чемпионаты с крутыми призами. Следи за информацией на наших страницах Instagram и Facebook',

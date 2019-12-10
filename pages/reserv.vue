@@ -209,7 +209,7 @@
                               <v-textarea
                                 label="Пожелания"
                                 v-model="wish"
-                                value=""
+                                value=""Акции кальян-баров DOIT
                                 rows="1"
                                 hint="Есть пожелания?"
                               ></v-textarea>
