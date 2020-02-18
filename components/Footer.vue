@@ -29,7 +29,7 @@
                     <v-divider></v-divider>
 
                     <v-card-text class="white--text">
-                        &copy;2019 — <strong>E.P.</strong>
+                        &copy;2020 — <strong>E.P.</strong>
                     </v-card-text>
                 </v-card>
             </v-footer>
