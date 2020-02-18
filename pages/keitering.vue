@@ -5,7 +5,7 @@
 
 
 <script>
-window.location.href = 'http://kalyanschiki.com.ua/'
+// window.location.href = 'http://kalyanschiki.com.ua/'
 export default {
   head: {
     title: 'Кейтеринг - DOIT Сеть кальян-баров',
@@ -19,6 +19,10 @@ export default {
       { name: 'og:url', content: 'https://doit.kiev.ua/keitering' },
       { name: 'og:image', content: 'https://doit.kiev.ua' + require('~/assets/logo.jpg') }
     ]
+  },
+  middleware ({ store, redirect }) {
+    // If the user is not authenticated
+    return redirect('https://kalyanschiki.com.ua')
   },
   data () {
     return {
