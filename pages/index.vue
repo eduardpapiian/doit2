@@ -52,7 +52,7 @@
       </div>
       <div class="wrapper">
         <div class="main-content" id="main-content">
-          <h1 class="mob-title">Сеть кальян-баров DOIT в Киеве</h1>
+          <h2 class="mob-title">Сеть кальян-баров DOIT в Киеве</h2>
           <aboutUsBlock/>
         </div>
         <div>

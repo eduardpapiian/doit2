@@ -2,11 +2,12 @@ const express = require('express')
 var bodyParser = require('body-parser')
 const app = express()
 
+app.use(bodyParser.json())
+
 app.get('/', (req, res, next) => {
   res.send('API root')
 })
 
-app.use(bodyParser.json())
 app.post('/postvdnh', async (req, res, next) => {
   const token = process.env.VDNH_TOKEN
   const chatId = process.env.VDNH_CHAT_ID
