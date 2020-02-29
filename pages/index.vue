@@ -75,6 +75,10 @@
     },
     head: {
       title: 'DOIT Сеть кальян-баров',
+      htmlAttrs: {
+        lang: 'ru',
+        amp: true
+      },
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
