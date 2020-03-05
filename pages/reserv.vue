@@ -260,8 +260,8 @@
     head: {
       title: 'Резерв Онлайн - DOIT Сеть кальян-баров',
       htmlAttrs: {
-          lang: 'ru',
-          amp: true
+        lang: 'ru',
+        amp: true
       },
       meta: [
         { charset: 'utf-8' },

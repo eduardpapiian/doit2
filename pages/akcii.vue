@@ -100,8 +100,8 @@
             </v-card-title>
 
             <v-card-actions>
-              <v-btn flat color="orange" href="https://www.instagram.com/doithookah/" target="_blank"><inst/><span class="social">DOIT_VDNH</span></v-btn>
-              <v-btn flat color="orange" href="https://www.instagram.com/doit_kpi/" target="_blank"><inst/><span class="social">DOIT_KPI</span></v-btn>
+              <v-btn flat color="orange" href="https://www.instagram.com/doit_hookah" target="_blank"><inst/><span class="social">DOIT_VDNH</span></v-btn>
+              <!--<v-btn flat color="orange" href="https://www.instagram.com/doit_kpi/" target="_blank"><inst/><span class="social">DOIT_KPI</span></v-btn>-->
             </v-card-actions>
           </v-card>
           </v-hover>
