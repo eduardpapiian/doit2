@@ -167,6 +167,7 @@
           { icon: 'location_on', title: 'Где Найти', to: '/findus' },
           { icon: 'check', title: 'Резерв', to: '/reserv' },
           { icon: 'restaurant_menu', title: 'Меню', to: '/menu' },
+          // { icon: 'date_range', title: 'События', to: '/events' },
           { icon: 'drive_eta', title: 'Кейтеринг', to: '/keitering' },
           { icon: 'photo_camera', title: 'Галерея', to: '/galery' }
         ],

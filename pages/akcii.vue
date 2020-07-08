@@ -2,29 +2,29 @@
   <div>
   <v-layout>
     <v-container grid-list-md text-xs-center>
-      <h1 class="mb-3">Акции кальян-баров DOIT</h1>
+      <h1 class="mb-3">Акции кальян-бара DOIT</h1>
       <v-layout row wrap class="justify-center">
-        <v-flex xs12 class="card">
-          <v-hover>
-            <v-card
-                    slot-scope="{ hover }"
-                    :class="`elevation-${hover ? 12 : 2}`">
-              <img class="img" src="~/assets/akcii/topimg.jpg" alt="hookahs">
+        <!--<v-flex xs12 class="card">-->
+          <!--<v-hover>-->
+            <!--<v-card-->
+                    <!--slot-scope="{ hover }"-->
+                    <!--:class="`elevation-${hover ? 12 : 2}`">-->
+              <!--<img class="img" src="~/assets/akcii/topimg.jpg" alt="hookahs">-->
 
-              <v-card-title primary-title>
-                <div class="left-block-text">
-                  <h2 class="headline mb-0">50% скидка на кальян в DOIT KPI</h2>
-                  <div class="text"> {{ firstTextKpi }} </div>
-                </div>
-              </v-card-title>
+              <!--<v-card-title primary-title>-->
+                <!--<div class="left-block-text">-->
+                  <!--<h2 class="headline mb-0">50% скидка на кальян в DOIT KPI</h2>-->
+                  <!--<div class="text"> {{ firstTextKpi }} </div>-->
+                <!--</div>-->
+              <!--</v-card-title>-->
 
-              <v-card-actions class="right-block-btn mob-column">
-                <v-btn flat href="tel:+380970712426" color="orange"><span>КПИ: </span> +38 (097) 071 24 26</v-btn>
-                <v-btn flat @click="openKpiModal" color="orange">Резерв DOIT_KPI</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-hover>
-        </v-flex>
+              <!--<v-card-actions class="right-block-btn mob-column">-->
+                <!--<v-btn flat href="tel:+380970712426" color="orange"><span>КПИ: </span> +38 (097) 071 24 26</v-btn>-->
+                <!--<v-btn flat @click="openKpiModal" color="orange">Резерв DOIT_KPI</v-btn>-->
+              <!--</v-card-actions>-->
+            <!--</v-card>-->
+          <!--</v-hover>-->
+        <!--</v-flex>-->
         <v-flex xs6 class="card">
           <v-hover>
           <v-card
@@ -41,7 +41,7 @@
 
           <v-card-actions class="right-block-btn mob-column">
             <v-btn flat @click="openVdnhModal" color="orange">Резерв DOIT_VDNH</v-btn>
-            <v-btn flat @click="openKpiModal" color="orange">Резерв DOIT_KPI</v-btn>
+            <!--<v-btn flat @click="openKpiModal" color="orange">Резерв DOIT_KPI</v-btn>-->
           </v-card-actions>
         </v-card>
        </v-hover>
@@ -60,8 +60,10 @@
             </v-card-title>
 
             <v-card-actions class="mob-column">
-              <v-btn flat href="tel:+380636087393" color="orange"><span>ВДНХ: </span> +38 (063) 608 73 93</v-btn>
-              <v-btn flat href="tel:+380970712426" color="orange"><span>КПИ: </span> +38 (097) 071 24 26</v-btn>
+              <v-btn flat href="tel:+380636087393" color="orange">
+                <!--<span>ВДНХ: </span> -->
+                +38 (063) 608 73 93</v-btn>
+              <!--<v-btn flat href="tel:+380970712426" color="orange"><span>КПИ: </span> +38 (097) 071 24 26</v-btn>-->
             </v-card-actions>
           </v-card>
          </v-hover>
@@ -81,7 +83,7 @@
 
             <v-card-actions class="right-block-btn">
               <v-btn flat color="orange" href="https://www.facebook.com/doithookah/" target="_blank"><fb/><span class="social">DOIT_VDNH</span></v-btn>
-              <v-btn flat color="orange" href="https://www.facebook.com/doitkpi/" target="_blank"><fb/><span class="social">DOIT_KPI</span></v-btn>
+              <!--<v-btn flat color="orange" href="https://www.facebook.com/doitkpi/" target="_blank"><fb/><span class="social">DOIT_KPI</span></v-btn>-->
             </v-card-actions>
           </v-card>
           </v-hover>
@@ -125,7 +127,7 @@
   import Footer from '~/components/Footer.vue'
   export default {
     head: {
-      title: 'Акции - DOIT Сеть кальян-баров',
+      title: 'Акции - DOIT Первый кальян-бар на ВДНХ',
       htmlAttrs: {
         lang: 'ru',
         amp: true
@@ -133,9 +135,9 @@
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: 'description', name: 'description', content: 'Постоянные акции сети кальян-баров DOIT: Счастливые Часы, Именинникам кальян в подарок, розыгрыш бесплатного кальяна, Бир Понг' },
-        { name: 'og:title', content: 'Акции - DOIT Сеть кальян-баров' },
-        { name: 'og:description', content: 'Постоянные акции сети кальян-баров DOIT: Счастливые Часы, Именинникам кальян в подарок, розыгрыш бесплатного кальяна, Бир Понг' },
+        { hid: 'description', name: 'description', content: 'Постоянные акции кальян-бара DOIT: Счастливые Часы, Именинникам кальян в подарок, розыгрыш бесплатного кальяна, Бир Понг' },
+        { name: 'og:title', content: 'Акции - DOIT Первый кальян-бар на ВДНХ' },
+        { name: 'og:description', content: 'Постоянные акции кальян-бара DOIT: Счастливые Часы, Именинникам кальян в подарок, розыгрыш бесплатного кальяна, Бир Понг' },
         { name: 'og:type', content: 'website' },
         { name: 'og:url', content: 'https://doit.kiev.ua/akcii' },
         { name: 'og:image', content: 'https://doit.kiev.ua' + require('~/assets/logo.jpg') }

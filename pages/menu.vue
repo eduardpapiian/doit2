@@ -2,7 +2,7 @@
 <div>
   <v-layout>
     <v-container grid-list-md text-xs-center>
-      <h1 class="mb-3 top-title">Актуальное меню кальян-баров DOIT</h1>
+      <h1 class="mb-3 top-title">Актуальное меню кальян-бара DOIT</h1>
     <v-layout row wrap class="column">
       <div class="img-wrap">
         <img src="~/assets/menu/1-1-min.jpg" alt="menu-1">
@@ -45,7 +45,7 @@
 import Footer from '~/components/Footer.vue'
 export default {
   head: {
-    title: 'Меню - DOIT Сеть кальян-баров',
+    title: 'Меню - DOIT Первый кальян-бар на ВДНХ',
     htmlAttrs: {
       lang: 'ru',
       amp: true
@@ -53,9 +53,9 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Меню сети кальян-баров DOIT с актуальными ценами. Вы можете уже заранее сделать свой выбор' },
-      { name: 'og:title', content: 'Меню - DOIT Сеть кальян-баров' },
-      { name: 'og:description', content: 'Меню сети кальян-баров DOIT с актуальными ценами. Вы можете уже заранее сделать свой выбор' },
+      { hid: 'description', name: 'description', content: 'Меню кальян-бара DOIT с актуальными ценами. Вы можете уже заранее сделать свой выбор' },
+      { name: 'og:title', content: 'Меню - DOIT Первый кальян-бар на ВДНХ' },
+      { name: 'og:description', content: 'Меню кальян-бара DOIT с актуальными ценами. Вы можете уже заранее сделать свой выбор' },
       { name: 'og:type', content: 'website' },
       { name: 'og:url', content: 'https://doit.kiev.ua/menu' },
       { name: 'og:image', content: 'https://doit.kiev.ua' + require('~/assets/logo.jpg') }

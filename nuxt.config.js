@@ -13,9 +13,9 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Сеть кальян-баров на ВДНХ и КПИ, с ярким дизайнерским оформление интерьера. Широкая палитра вкусов табака многих производителей от легкого fumari до ядерного tangiers. Трансляция событий и турниров на игровых консолях' },
-      { name: 'og:title', content: 'DOIT Сеть кальян-баров' },
-      { name: 'og:description', content: 'Сеть кальян-баров на ВДНХ и КПИ, с ярким дизайнерским оформление интерьера. Широкая палитра вкусов табака многих производителей от легкого fumari до ядерного tangiers. Трансляция событий и турниров на игровых консолях' },
+      { hid: 'description', name: 'description', content: 'Первый кальян-бар на ВДНХ, с ярким дизайнерским оформление интерьера. Широкая палитра вкусов табака многих производителей от легкого fumari до ядерного tangiers. Трансляция событий и турниров на игровых консолях' },
+      { name: 'og:title', content: 'DOIT Первый кальян-бар на ВДНХ' },
+      { name: 'og:description', content: 'Первый кальян-бар на ВДНХ, с ярким дизайнерским оформление интерьера. Широкая палитра вкусов табака многих производителей от легкого fumari до ядерного tangiers. Трансляция событий и турниров на игровых консолях' },
       { name: 'og:type', content: 'website' },
       { name: 'og:url', content: 'https://doit.kiev.ua' },
       { name: 'og:image', content: 'https://doit.kiev.ua/assets/logo.jpg' }
@@ -32,7 +32,7 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
-  serverMiddleware: ['~/api/telegram.js'],
+  serverMiddleware: ['~/api/index.js'],
   loading: { color: '#3B8070' },
   modules: [
     '@nuxtjs/sitemap',
@@ -78,6 +78,7 @@ module.exports = {
       '/galery',
       '/keitering',
       '/menu',
+      '/events',
       '/reserv'
     ]
   },

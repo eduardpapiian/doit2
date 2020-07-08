@@ -1,6 +1,7 @@
 # dependencies
 node_modules
 package-lock.json
+git-ignore-files
 
 # logs
 npm-debug.log

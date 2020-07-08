@@ -1,8 +1,18 @@
-const express = require('express')
-var bodyParser = require('body-parser')
-const app = express()
+const express = require('express');
+var bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
-app.use(bodyParser.json())
+mongoose.connect(process.env.DB_CONNECT,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  },
+  () => console.log('connected to DB!')
+);
+
+const app = express();
+
+app.use(bodyParser.json());
 
 app.get('/', (req, res, next) => {
   res.send('API root')

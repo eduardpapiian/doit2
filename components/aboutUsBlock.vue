@@ -9,7 +9,7 @@
     <!--&gt;</quick-menu>-->
     <div class="about-us-block">
         <div class="title-block">
-            <h1 class="desktop-title">Сеть кальян-баров DOIT в Киеве</h1>
+            <h1 class="desktop-title">Первый кальян-бар на ВДНХ</h1>
         </div>
       <div class="flex first-block">
       <div class="left-block">
@@ -126,8 +126,8 @@
     </div>
     <div class="find-us">
       <h2>Где Нас Найти</h2>
-      <div class="panels ">
-        <div class="panel panel1">
+      <div class="panels">
+        <div class="panel panel1 open-active">
           <div class="p-rows">
             <a href="tel:+380636087393">+38 (063) 608 73 93</a>
             <a href="tel:+380993243616">+38 (099) 324 36 16</a>
@@ -140,19 +140,19 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20348.934628336476!2d30.453641790048202!3d50.3923410909551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x48c7d50f130664dd!2sDOIT!5e0!3m2!1sru!2sua!4v1554399787362!5m2!1sru!2sua" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </div>
-        <div class="panel panel2">
-          <div class="p-rows">
-            <a href="tel:+380970712426">+38 (097) 071 24 26</a>
-            <a href="tel:+380995095072">+38 (099) 509 50 72</a>
-          </div>
-          <div class="p-rows">DOIT KPI</div>
-          <div class="p-rows maps">
-            <div class="adress">
-              Провиантская 3
-            </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.446665484943!2d30.469927015621444!3d50.45140659517727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cfff15f370ab%3A0x7cfcffec4ec052c!2sDOIT!5e0!3m2!1sru!2sua!4v1561811144055!5m2!1sru!2sua" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
-          </div>
-        </div>
+        <!--<div class="panel panel2">-->
+          <!--<div class="p-rows">-->
+            <!--<a href="tel:+380970712426">+38 (097) 071 24 26</a>-->
+            <!--<a href="tel:+380995095072">+38 (099) 509 50 72</a>-->
+          <!--</div>-->
+          <!--<div class="p-rows">DOIT KPI</div>-->
+          <!--<div class="p-rows maps">-->
+            <!--<div class="adress">-->
+              <!--Провиантская 3-->
+            <!--</div>-->
+            <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.446665484943!2d30.469927015621444!3d50.45140659517727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cfff15f370ab%3A0x7cfcffec4ec052c!2sDOIT!5e0!3m2!1sru!2sua!4v1561811144055!5m2!1sru!2sua" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+          <!--</div>-->
+        <!--</div>-->
       </div>
     </div>
   </div>
@@ -166,22 +166,22 @@ import 'font-awesome/css/font-awesome.min.css'
 
 export default {
   mounted () {
-    const panels = document.querySelectorAll('.panel')
+    // const panels = document.querySelectorAll('.panel')
 
-    function toggleOpen () {
-      // console.log('Hello')
-      this.classList.toggle('open')
-    }
+    // function toggleOpen () {
+    //   // console.log('Hello')
+    //   this.classList.toggle('open')
+    // }
+    //
+    // function toggleActive (e) {
+    //   // console.log(e.propertyName)
+    //   if (e.propertyName.includes('flex')) {
+    //     this.classList.toggle('open-active')
+    //   }
+    // }
 
-    function toggleActive (e) {
-      // console.log(e.propertyName)
-      if (e.propertyName.includes('flex')) {
-        this.classList.toggle('open-active')
-      }
-    }
-
-    panels.forEach(panel => panel.addEventListener('click', toggleOpen))
-    panels.forEach(panel => panel.addEventListener('transitionend', toggleActive))
+    // panels.forEach(panel => panel.addEventListener('click', toggleOpen))
+    // panels.forEach(panel => panel.addEventListener('transitionend', toggleActive))
   },
   components: {
     Parallax,
@@ -554,7 +554,7 @@ h2{
   }
 
   .panel.open {
-    flex: 5;
+    flex: 1;
     font-size: 30px;
   }
 

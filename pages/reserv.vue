@@ -18,10 +18,10 @@
         <v-icon>where_to_vote</v-icon>
       </v-tab>
 
-      <v-tab href="#tab-2">
-        DOIT КПИ
-        <v-icon>where_to_vote</v-icon>
-      </v-tab>
+      <!--<v-tab href="#tab-2">-->
+        <!--DOIT КПИ-->
+        <!--<v-icon>where_to_vote</v-icon>-->
+      <!--</v-tab>-->
 
       <v-tab-item
         :value="'tab-1'"
@@ -127,110 +127,110 @@
           </v-card-text>
         </v-card>
       </v-tab-item>
-      <v-tab-item
-        :value="'tab-2'"
-      >
-        <v-card flat>
-          <v-card-text>
-            <div class="box">
-                <div class="box-part bp-left">
-                    <div class="partition partition-register">
-                      <div class="partition-title">
-                          <h2>Резерв Онлайн DOIT KPI</h2>
-                      </div>
-                        <div class="partition-form">
-                            <form>
-                              <v-text-field
-                                v-model="name"
-                                :error-messages="nameErrors"
-                                label="Имя"
-                                required
-                                @input="$v.name.$touch()"
-                                @blur="$v.name.$touch()"
-                              ></v-text-field>
-                              <v-text-field
-                                v-model="tel"
-                                :error-messages="telErrors"
-                                label="Телефон"
-                                required
-                                @input="$v.tel.$touch()"
-                                @blur="$v.tel.$touch()"
-                              ></v-text-field>
-                              <v-menu
-                                ref="menu2"
-                                v-model="menu2"
-                                :close-on-content-click="false"
-                                :nudge-right="40"
-                                lazy
-                                transition="scale-transition"
-                                offset-y
-                                full-width
-                                max-width="290px"
-                                min-width="290px"
-                              >
-                                <template v-slot:activator="{ on }">
-                                  <v-text-field
-                                    v-model="dateFormatted"
-                                    label="Дата"
-                                    persistent-hint
-                                    @blur="date = parseDate(dateFormatted)"
-                                    v-on="on"
-                                  ></v-text-field>
-                                </template>
-                                <v-date-picker v-model="date" no-title @input="menu2 = false"></v-date-picker>
-                              </v-menu>
-                              <v-text-field
-                                v-model="time"
-                                :error-messages="timeErrors"
-                                type="time"
-                                label="Время"
-                                required
-                                @input="$v.time.$touch()"
-                                @blur="$v.time.$touch()"
-                              ></v-text-field>
-                              <v-text-field
-                                v-model="number"
-                                :error-messages="numberErrors"
-                                type="number"
-                                label="Количество гостей"
-                                required
-                                @input="$v.number.$touch()"
-                                @blur="$v.number.$touch()"
-                              ></v-text-field>
-                              <v-select
-                                v-model="select"
-                                :items="itemsKpi"
-                                :error-messages="selectErrors"
-                                label="Номер Стола"
-                                required
-                                @change="$v.select.$touch()"
-                                @blur="$v.select.$touch()"
-                              ></v-select>
-                              <v-textarea
-                                label="Пожелания"
-                                v-model="wish"
-                                value=""Акции кальян-баров DOIT
-                                rows="1"
-                                hint="Есть пожелания?"
-                              ></v-textarea>
-                              <v-btn class="button" color="success" @click="submitKpi">Забронировать</v-btn>
-                            </form>
-                            <div class="partition-title-1">
-                              Внимание! При резерве вип-комнаты действует система депозита. Обязательный заказ на сумму не менее 800 грн.
-                              Время резерва неограниченно, за исключением, если вип-комната, не была забронирована минимум через 4 часа, с момента Вашего прихода<br>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="box-part bp-right">
-                    <div class="box-img">
-                      <img src="~/assets/roomplan/roomplan2-1-min.png" alt="roomplan">
-                    </div>
-                </div>
-            </div>
-          </v-card-text>
-        </v-card>
-      </v-tab-item>
+      <!--<v-tab-item-->
+        <!--:value="'tab-2'"-->
+      <!--&gt;-->
+        <!--<v-card flat>-->
+          <!--<v-card-text>-->
+            <!--<div class="box">-->
+                <!--<div class="box-part bp-left">-->
+                    <!--<div class="partition partition-register">-->
+                      <!--<div class="partition-title">-->
+                          <!--<h2>Резерв Онлайн DOIT KPI</h2>-->
+                      <!--</div>-->
+                        <!--<div class="partition-form">-->
+                            <!--<form>-->
+                              <!--<v-text-field-->
+                                <!--v-model="name"-->
+                                <!--:error-messages="nameErrors"-->
+                                <!--label="Имя"-->
+                                <!--required-->
+                                <!--@input="$v.name.$touch()"-->
+                                <!--@blur="$v.name.$touch()"-->
+                              <!--&gt;</v-text-field>-->
+                              <!--<v-text-field-->
+                                <!--v-model="tel"-->
+                                <!--:error-messages="telErrors"-->
+                                <!--label="Телефон"-->
+                                <!--required-->
+                                <!--@input="$v.tel.$touch()"-->
+                                <!--@blur="$v.tel.$touch()"-->
+                              <!--&gt;</v-text-field>-->
+                              <!--<v-menu-->
+                                <!--ref="menu2"-->
+                                <!--v-model="menu2"-->
+                                <!--:close-on-content-click="false"-->
+                                <!--:nudge-right="40"-->
+                                <!--lazy-->
+                                <!--transition="scale-transition"-->
+                                <!--offset-y-->
+                                <!--full-width-->
+                                <!--max-width="290px"-->
+                                <!--min-width="290px"-->
+                              <!--&gt;-->
+                                <!--<template v-slot:activator="{ on }">-->
+                                  <!--<v-text-field-->
+                                    <!--v-model="dateFormatted"-->
+                                    <!--label="Дата"-->
+                                    <!--persistent-hint-->
+                                    <!--@blur="date = parseDate(dateFormatted)"-->
+                                    <!--v-on="on"-->
+                                  <!--&gt;</v-text-field>-->
+                                <!--</template>-->
+                                <!--<v-date-picker v-model="date" no-title @input="menu2 = false"></v-date-picker>-->
+                              <!--</v-menu>-->
+                              <!--<v-text-field-->
+                                <!--v-model="time"-->
+                                <!--:error-messages="timeErrors"-->
+                                <!--type="time"-->
+                                <!--label="Время"-->
+                                <!--required-->
+                                <!--@input="$v.time.$touch()"-->
+                                <!--@blur="$v.time.$touch()"-->
+                              <!--&gt;</v-text-field>-->
+                              <!--<v-text-field-->
+                                <!--v-model="number"-->
+                                <!--:error-messages="numberErrors"-->
+                                <!--type="number"-->
+                                <!--label="Количество гостей"-->
+                                <!--required-->
+                                <!--@input="$v.number.$touch()"-->
+                                <!--@blur="$v.number.$touch()"-->
+                              <!--&gt;</v-text-field>-->
+                              <!--<v-select-->
+                                <!--v-model="select"-->
+                                <!--:items="itemsKpi"-->
+                                <!--:error-messages="selectErrors"-->
+                                <!--label="Номер Стола"-->
+                                <!--required-->
+                                <!--@change="$v.select.$touch()"-->
+                                <!--@blur="$v.select.$touch()"-->
+                              <!--&gt;</v-select>-->
+                              <!--<v-textarea-->
+                                <!--label="Пожелания"-->
+                                <!--v-model="wish"-->
+                                <!--value=""Акции кальян-баров DOIT-->
+                                <!--rows="1"-->
+                                <!--hint="Есть пожелания?"-->
+                              <!--&gt;</v-textarea>-->
+                              <!--<v-btn class="button" color="success" @click="submitKpi">Забронировать</v-btn>-->
+                            <!--</form>-->
+                            <!--<div class="partition-title-1">-->
+                              <!--Внимание! При резерве вип-комнаты действует система депозита. Обязательный заказ на сумму не менее 800 грн.-->
+                              <!--Время резерва неограниченно, за исключением, если вип-комната, не была забронирована минимум через 4 часа, с момента Вашего прихода<br>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="box-part bp-right">-->
+                    <!--<div class="box-img">-->
+                      <!--<img src="~/assets/roomplan/roomplan2-1-min.png" alt="roomplan">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+          <!--</v-card-text>-->
+        <!--</v-card>-->
+      <!--</v-tab-item>-->
     </v-tabs>
     </v-layout>
         <no-ssr>
@@ -258,7 +258,7 @@
   import axios from 'axios'
   export default {
     head: {
-      title: 'Резерв Онлайн - DOIT Сеть кальян-баров',
+      title: 'Резерв Онлайн - DOIT Первый кальян-бар на ВДНХ',
       htmlAttrs: {
         lang: 'ru',
         amp: true
@@ -266,9 +266,9 @@
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: 'description', name: 'description', content: 'Быстрое нлайн бронирование столиков, в сети кальн-баров DOIT' },
-        { name: 'og:title', content: 'Резерв Онлайн - DOIT Сеть кальян-баров' },
-        { name: 'og:description', content: 'Быстрое нлайн бронирование столиков, в сети кальн-баров DOIT' },
+        { hid: 'description', name: 'description', content: 'Быстрое онлайн бронирование столиков, в кальян-баре DOIT' },
+        { name: 'og:title', content: 'Резерв Онлайн - DOIT Первый кальян-бар на ВДНХ' },
+        { name: 'og:description', content: 'Быстрое онлайн бронирование столиков, в кальн-баре DOIT' },
         { name: 'og:type', content: 'website' },
         { name: 'og:url', content: 'https://doit.kiev.ua/reserv' },
         { name: 'og:image', content: 'https://doit.kiev.ua' + require('~/assets/logo.jpg') }

@@ -41,7 +41,7 @@
 import Footer from '~/components/Footer.vue'
 export default {
   head: {
-    title: 'Галерея - DOIT Сеть кальян-баров',
+    title: 'Галерея - DOIT Первый кальян-бар на ВДНХ',
     htmlAttrs: {
       lang: 'ru',
       amp: true
@@ -50,7 +50,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Фото-галерея с Нашими гостями' },
-      { name: 'og:title', content: 'Галерея - DOIT Сеть кальян-баров' },
+      { name: 'og:title', content: 'Галерея - DOIT Первы кальян-бар на ВДНХ' },
       { name: 'og:description', content: 'Фото-галерея с Нашими гостями' },
       { name: 'og:type', content: 'website' },
       { name: 'og:url', content: 'https://doit.kiev.ua/galery' },

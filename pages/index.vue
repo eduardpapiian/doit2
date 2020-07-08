@@ -52,7 +52,7 @@
       </div>
       <div class="wrapper">
         <div class="main-content" id="main-content">
-          <h2 class="mob-title">Сеть кальян-баров DOIT в Киеве</h2>
+          <h2 class="mob-title">Первый кальян-бар на ВДНХ</h2>
           <aboutUsBlock/>
         </div>
         <div>
@@ -74,7 +74,7 @@
       Footer
     },
     head: {
-      title: 'DOIT Сеть кальян-баров',
+      title: 'DOIT Первый кальян-бар на ВДНХ',
       htmlAttrs: {
         lang: 'ru',
         amp: true
@@ -82,9 +82,9 @@
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: 'description', name: 'description', content: 'Сеть кальян-баров на ВДНХ и КПИ, с ярким дизайнерским оформление интерьера. Широкая палитра вкусов табака многих производителей от легкого fumari до ядерного tangiers.' },
-        { name: 'og:title', content: 'DOIT Сеть кальян-баров' },
-        { name: 'og:description', content: 'Сеть кальян-баров на ВДНХ и КПИ, с ярким дизайнерским оформление интерьера. Широкая палитра вкусов табака многих производителей от легкого fumari до ядерного tangiers.' },
+        { hid: 'description', name: 'description', content: 'Первый кальян-бар на ВДНХ, с ярким дизайнерским оформление интерьера. Широкая палитра вкусов табака многих производителей от легкого fumari до ядерного tangiers.' },
+        { name: 'og:title', content: 'Первый кальян-бар на ВДНХ' },
+        { name: 'og:description', content: 'Первый кальян-бар на ВДНХ, с ярким дизайнерским оформление интерьера. Широкая палитра вкусов табака многих производителей от легкого fumari до ядерного tangiers.' },
         { name: 'og:type', content: 'website' },
         { name: 'og:url', content: 'https://doit.kiev.ua' },
         { name: 'og:image', content: 'https://doit.kiev.ua' + require('~/assets/logo.jpg') }

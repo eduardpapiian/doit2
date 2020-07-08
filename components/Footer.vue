@@ -17,7 +17,7 @@
                         <div class="flex block-links justify-center">
                             <a class="links" href="https://www.facebook.com/doithookah/" target="_blank"><fb/><span>DOIT_VDNH</span></a>
                             <a class="links" href="https://www.instagram.com/doit_hookah" target="_blank"><inst/><span>DOIT</span></a>
-                            <a class="links" href="https://www.facebook.com/doitkpi/" target="_blank"><fb/><span>DOIT_KPI</span></a>
+                            <!--<a class="links" href="https://www.facebook.com/doitkpi/" target="_blank"><fb/><span>DOIT_KPI</span></a>-->
                             <!--<a class="links" href="https://www.instagram.com/doit_kpi/" target="_blank"><inst/><span>DOIT_KPI</span></a>-->
                         </div>
                         <div>
@@ -25,7 +25,7 @@
                         </div>
                     </v-card-text>
                     <v-card-text class="white--text pt-0">
-                        Сеть кальян-баров на ВДНХ и КПИ, с ярким дизайнерским оформлением интерьера. Широкая палитра вкусов табака многих производителей от легкого Fumari до ядерного Tangiers. Приглашаем на трансляцию спортивных событий и турниры на игровых консолях, а также прочие интерактивные развлечения</v-card-text>
+                        Первый кальян-бар на ВДНХ, с ярким дизайнерским оформлением интерьера. Широкая палитра вкусов табака многих производителей от легкого Fumari до ядерного Tangiers. Приглашаем на трансляцию спортивных событий и турниры на игровых консолях, а также прочие интерактивные развлечения</v-card-text>
                     <v-divider></v-divider>
 
                     <v-card-text class="white--text">
