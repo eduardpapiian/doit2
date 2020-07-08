@@ -18,6 +18,7 @@
         <v-icon>where_to_vote</v-icon>
       </v-tab>
 
+          
       <!--<v-tab href="#tab-2">-->
         <!--DOIT КПИ-->
         <!--<v-icon>where_to_vote</v-icon>-->
