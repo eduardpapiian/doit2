@@ -1,14 +1,14 @@
 const express = require('express');
 var bodyParser = require('body-parser');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 
-mongoose.connect(process.env.DB_CONNECT,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  },
-  () => console.log('connected to DB!')
-);
+// mongoose.connect(process.env.DB_CONNECT,
+//   {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+//   },
+//   () => console.log('connected to DB!')
+// );
 
 const app = express();
 
