@@ -37,7 +37,18 @@ module.exports = {
   modules: [
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    // Simple usage
+    '@nuxtjs/component-cache',
+
+    // With options
+    [
+      '@nuxtjs/component-cache',
+      {
+        max: 10000,
+        maxAge: 1000 * 60 * 60
+      }
+    ]
     // [
     //   '@nuxtjs/yandex-metrika',
     //   {
