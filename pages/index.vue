@@ -191,7 +191,7 @@
     .bottom-left-img{
       opacity:0;
     }
-    .middle-left-img, .top-left-img, .top-right-img, .right-bottom-img, .right-middle-img, .bg-bottom, .bg-behinds{
+    .middle-left-img, .top-left-img, .top-right-img, .right-bottom-img, .right-middle-img, .bg-bottom, .bg-behinds, .bottom-main{
       display:none;
     }
     .doit-main{
@@ -200,9 +200,15 @@
     .doit-main .main-bg{
       background-color: inherit;
     }
-    /*.bg-img{*/
-    /*  display:none;*/
-    /*}*/
+    #main-content{
+      background-color: #00000080;
+      margin-top:0 !important;
+      padding-top:40px;
+    }
+    .mob-title{
+      text-align:left;
+      padding:0 30px;
+    }
   }
 
   @media screen and (min-width: 768px){
