@@ -24,7 +24,7 @@
                             Почта: doit_hookah@ukr.net
                         </div>
                     </v-card-text>
-                    <v-card-text class="white--text pt-0">
+                    <v-card-text class="white--text pt-0 footer-text">
                         Первый кальян-бар на ВДНХ, с ярким дизайнерским оформлением интерьера. Широкая палитра вкусов табака многих производителей от легкого Fumari до ядерного Tangiers. Приглашаем на трансляцию спортивных событий и турниры на игровых консолях, а также прочие интерактивные развлечения</v-card-text>
                     <v-divider></v-divider>
 
@@ -94,6 +94,10 @@
             margin-top:3px;
             margin-left:10px;
         }
+    }
+    .footer-text{
+        max-width:1000px;
+        margin:0 auto;
     }
 </style>
 

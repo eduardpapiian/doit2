@@ -158,6 +158,11 @@
   .social{
     margin-left:5px;
   }
+  @media only screen and (min-width: 960px){
+    .container {
+      max-width: 1000px;
+    }
+  }
   @media only screen and (max-width: 800px){
     .top-layout {
       flex-direction:column !important;

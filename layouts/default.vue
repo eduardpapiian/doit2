@@ -209,6 +209,9 @@
     }
   }
   @media only screen and (max-width: 960px) {
+    .content{
+      /*background-size: contain;*/
+    }
     .navigation{
       height: 64px !important;
       .v-toolbar__content{

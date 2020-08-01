@@ -1,5 +1,5 @@
 <template>
-  <div class="doit-main">
+  <div class="doit-main" id="doit-main">
     <div class="main-bg">
       <div class="bg-img bottom-left-img">
         <parallax :speed-factor="0.3">
@@ -133,7 +133,6 @@
       }
     },
     beforeDestroy: function () {
-      // console.log('DESTROY')
       window.removeEventListener('resize', this.resize)
     }
   }
@@ -186,6 +185,24 @@
     .mob-title{
       display:block;
     }
+  }
+
+  @media screen and (max-width: 960px){
+    .bottom-left-img{
+      opacity:0;
+    }
+    .middle-left-img, .top-left-img, .top-right-img, .right-bottom-img, .right-middle-img, .bg-bottom, .bg-behinds{
+      display:none;
+    }
+    .doit-main{
+      background-color: inherit;
+    }
+    .doit-main .main-bg{
+      background-color: inherit;
+    }
+    /*.bg-img{*/
+    /*  display:none;*/
+    /*}*/
   }
 
   @media screen and (min-width: 768px){

@@ -5,31 +5,28 @@
       <h1 class="mb-3 top-title">Актуальное меню кальян-бара DOIT</h1>
     <v-layout row wrap class="column">
       <div class="img-wrap">
-        <img src="~/assets/menu/1-1-min.jpg" alt="menu-1">
+        <img src="~/assets/menu/1.jpg" alt="menu-1">
       </div>
       <div class="img-wrap">
-        <img src="~/assets/menu/2-2-min.jpg" alt="menu-1">
+        <img src="~/assets/menu/2.jpg" alt="menu-1">
       </div>
       <div class="img-wrap">
-        <img src="~/assets/menu/3-3-min.jpg" alt="menu-1">
+        <img src="~/assets/menu/3.jpg" alt="menu-1">
       </div>
       <div class="img-wrap">
-        <img src="~/assets/menu/4-4-min.jpg" alt="menu-1">
+        <img src="~/assets/menu/4.jpg" alt="menu-1">
       </div>
       <div class="img-wrap">
-        <img src="~/assets/menu/5-5-min.jpg" alt="menu-1">
+        <img src="~/assets/menu/5.jpg" alt="menu-1">
       </div>
       <div class="img-wrap">
-        <img src="~/assets/menu/6-6-min.jpg" alt="menu-1">
+        <img src="~/assets/menu/6.jpg" alt="menu-1">
       </div>
       <div class="img-wrap">
-        <img src="~/assets/menu/7-7-min.jpg" alt="menu-1">
+        <img src="~/assets/menu/7.jpg" alt="menu-1">
       </div>
       <div class="img-wrap">
-        <img src="~/assets/menu/8-8-min.jpg" alt="menu-1">
-      </div>
-      <div class="img-wrap">
-        <img src="~/assets/menu/9-9-min.jpg" alt="menu-1">
+        <img src="~/assets/menu/8.jpg" alt="menu-1">
       </div>
     </v-layout>
   </v-container>
