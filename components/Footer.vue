@@ -14,7 +14,7 @@
                                 {{ item.title }}
                             </v-btn>
                         </v-layout>
-                        <div class="flex block-links justify-center" @click="click">
+                        <div class="flex block-links justify-center">
                             <a class="links" href="https://www.facebook.com/doithookah/" target="_blank"><fb/><span>DOIT_VDNH</span></a>
                             <a class="links" href="https://www.instagram.com/doit_hookah" target="_blank"><inst/><span>DOIT</span></a>
                             <!--<a class="links" href="https://www.facebook.com/doitkpi/" target="_blank"><fb/><span>DOIT_KPI</span></a>-->
@@ -38,7 +38,6 @@
 <script>
   import fb from '~/components/fb.vue'
   import inst from '~/components/inst.vue'
-  import axios from 'axios'
   export default {
     name: 'my-footer',
     components: {
@@ -63,16 +62,6 @@
 
     },
     methods: {
-      click () {
-        axios
-          .get(`https://parkos.nl/ajax/locationSearchJSON/?location=parkeren-schiphol&arrival=2021-06-02&arrivalTime=12%3A00&departure=2021-07-10&departureTime=12%3A00&sort_f=price&sort_w=asc`)
-          .then(response => {
-            console.log('resp', response)
-          })
-          .catch(error => {
-            console.log('er', error)
-          })
-      }
     }
   }
 </script>

@@ -1,6 +1,7 @@
 const express = require('express');
 var bodyParser = require('body-parser');
 // const mongoose = require('mongoose');
+const request = require('request');
 
 // mongoose.connect(process.env.DB_CONNECT,
 //   {
@@ -11,6 +12,11 @@ var bodyParser = require('body-parser');
 // );
 
 const app = express();
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
 
 app.use(bodyParser.json());
 
