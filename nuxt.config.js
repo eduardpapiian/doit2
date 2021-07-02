@@ -1,6 +1,7 @@
 const env = require('dotenv').config()
 // console.log('enx', env)
 module.exports = {
+  mode: 'universal',
   /*
   ** Headers of the page
   */
@@ -27,12 +28,18 @@ module.exports = {
     ]
   },
   env: env.parsed,
-  plugins: ['~/plugins/vuetify.js', '~/plugins/vue2-google-maps.js', { src: '~plugins/sweet-modal', ssr: false }, { src: '~plugins/ga.js', ssr: false }],
+  plugins: [
+    '~/plugins/vuetify.js',
+    '~/plugins/vue2-google-maps.js',
+    { src: '~plugins/sweet-modal', ssr: false },
+    { src: '~plugins/ga.js', ssr: false },
+    { src: '~plugins/vue-parallaxy.client.js' },
+  ],
   css: ['~/assets/style/app.styl'],
   /*
   ** Customize the progress bar color
   */
-  serverMiddleware: ['~/api/index.js'],
+  // serverMiddleware: ['~/api/index.js'],
   loading: { color: '#3B8070' },
   modules: [
     '@nuxtjs/sitemap',
@@ -65,7 +72,7 @@ module.exports = {
   },
   manifest: {
     short_name: 'DOIT',
-    name: 'DOIT Сеть кальян-баров',
+    name: 'DOIT Первый кальян-бар на ВДНХ',
     start_url: '/',
     background_color: '#303030',
     theme_color: '#303030'

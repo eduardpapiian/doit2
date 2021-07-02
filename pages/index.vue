@@ -1,10 +1,11 @@
 <template>
   <div class="doit-main" id="doit-main">
     <div class="main-bg">
+      <client-only>
       <div class="bg-img bottom-left-img">
-        <parallax :speed-factor="0.3">
-          <img id="bg" src="~assets/main-bg/left-bottom-1-min.png" alt="img">
-        </parallax>
+          <parallax :speed-factor="0.3">
+            <img id="bg" src="~assets/main-bg/left-bottom-1-min.png" alt="img">
+          </parallax>
       </div>
       <div class="bg-img middle-left-img">
         <parallax :speed-factor="0">
@@ -59,17 +60,18 @@
           <Footer/>
         </div>
       </div>
+      </client-only>
     </div>
   </div>
 </template>
 
 <script>
-  import Parallax from 'vue-parallaxy'
+  // import Parallax from 'vue-parallaxy'
   import aboutUsBlock from '~/components/aboutUsBlock.vue'
   import Footer from '~/components/Footer.vue'
   export default {
     components: {
-      Parallax,
+      // Parallax,
       aboutUsBlock,
       Footer
     },

@@ -25,6 +25,7 @@ app.get('/', (req, res, next) => {
 })
 
 app.post('/postvdnh', async (req, res, next) => {
+  console.log('HEEEEELLLLLLLOOOOO')
   const token = process.env.VDNH_TOKEN
   const chatId = process.env.VDNH_CHAT_ID
   console.log(token, chatId)

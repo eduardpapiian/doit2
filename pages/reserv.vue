@@ -146,7 +146,8 @@
   import Footer from '~/components/Footer.vue'
   import { validationMixin } from 'vuelidate'
   import { required, minLength } from 'vuelidate/lib/validators'
-  import axios from 'axios'
+  // import axios from 'axios'
+  const axios = require('axios')
   export default {
     head: {
       title: 'Резерв Онлайн - DOIT Первый кальян-бар на ВДНХ',
@@ -266,33 +267,64 @@
           table: this.select,
           wishes: this.wish
         }
+        const token = process.env.VDNH_TOKEN
+        const chatId = process.env.VDNH_CHAT_ID
+
+        const myData = encodeURIComponent("<b>Имя: </b>"+ data.name + "\n<b>Телефон: </b>"+ data.phone + "\n<b>Число: </b>"+ data.date + "\n<b>Время: </b>" + data.time + "\n<b>Гостей: </b>" + data.guest + "\n<b>Стол: </b>"+ data.table + "\n<b>Пожелания: </b>"+ data.wishes)
         axios
-          .post(`api/postvdnh`, data)
-          .then(response => {
-            if (response.data.ok === true) {
-              this.$refs.success.open()
-              setTimeout(() => {
+            .post(
+            `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&parse_mode=html&text=${myData}`
+        ).then( resp => {
+              if (resp.data.ok === true) {
+                this.$refs.success.open()
+                setTimeout(() => {
+                  this.$v.$reset()
+                  this.$refs.success.close()
+                  this.name = ''
+                  this.tel = ''
+                  this.dateFormatted = ''
+                  this.time = ''
+                  this.number = ''
+                  this.select = false
+                  this.wish = ''
+                }, 4000)
+              }
+        }).catch(err => {
+              if (!err.response.data.ok) {
                 this.$v.$reset()
-                this.$refs.success.close()
-                this.name = ''
-                this.tel = ''
-                this.dateFormatted = ''
-                this.time = ''
-                this.number = ''
-                this.select = false
-                this.wish = ''
-              }, 4000)
-            }
-          })
-          .catch(error => {
-            if (!error.response.data.ok) {
-              this.$v.$reset()
-              this.$refs.error.open()
-              setTimeout(() => {
-                this.$refs.error.close()
-              }, 4000)
-            }
-          })
+                this.$refs.error.open()
+                setTimeout(() => {
+                  this.$refs.error.close()
+                }, 4000)
+              }
+        })
+        // axios
+        //   .post(`api/postvdnh`, data)
+        //   .then(response => {
+        //     if (response.data.ok === true) {
+        //       this.$refs.success.open()
+        //       setTimeout(() => {
+        //         this.$v.$reset()
+        //         this.$refs.success.close()
+        //         this.name = ''
+        //         this.tel = ''
+        //         this.dateFormatted = ''
+        //         this.time = ''
+        //         this.number = ''
+        //         this.select = false
+        //         this.wish = ''
+        //       }, 4000)
+        //     }
+        //   })
+        //   .catch(error => {
+        //     if (!error.response.data.ok) {
+        //       this.$v.$reset()
+        //       this.$refs.error.open()
+        //       setTimeout(() => {
+        //         this.$refs.error.close()
+        //       }, 4000)
+        //     }
+        //   })
       },
       submitKpi () {
         this.$v.$touch()
