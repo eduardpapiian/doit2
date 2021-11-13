@@ -16,7 +16,7 @@
           <div class="column-left">
             <v-btn class="street-btn" flat href="https://goo.gl/maps/zKn1JJE8Nj72" target="_blank" color="orange">Голосеевский проспект 130/57</v-btn>
             <v-btn flat href="tel:+380636087393">+38 (063) 608 73 93</v-btn>
-            <v-btn flat href="tel:+380993243616">+38 (099) 324 36 16</v-btn>
+<!--            <v-btn flat href="tel:+380993243616">+38 (099) 324 36 16</v-btn>-->
             <v-btn flat @click="openVdnhModal" color="orange">Резерв DOIT_VDNH онлайн</v-btn>
           </div>
         </v-card-actions>

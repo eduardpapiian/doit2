@@ -130,7 +130,7 @@
         <div class="panel panel1 open-active">
           <div class="p-rows">
             <a href="tel:+380636087393">+38 (063) 608 73 93</a>
-            <a href="tel:+380993243616">+38 (099) 324 36 16</a>
+<!--            <a href="tel:+380993243616">+38 (099) 324 36 16</a>-->
           </div>
           <div class="p-rows">DOIT VDNH</div>
           <div class="p-rows maps">

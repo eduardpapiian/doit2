@@ -270,33 +270,30 @@
         const token = process.env.VDNH_TOKEN
         const chatId = process.env.VDNH_CHAT_ID
 
-        const myData = encodeURIComponent("<b>Имя: </b>"+ data.name + "\n<b>Телефон: </b>"+ data.phone + "\n<b>Число: </b>"+ data.date + "\n<b>Время: </b>" + data.time + "\n<b>Гостей: </b>" + data.guest + "\n<b>Стол: </b>"+ data.table + "\n<b>Пожелания: </b>"+ data.wishes)
-        axios
-            .post(
-            `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&parse_mode=html&text=${myData}`
-        ).then( resp => {
-              if (resp.data.ok === true) {
-                this.$refs.success.open()
-                setTimeout(() => {
-                  this.$v.$reset()
-                  this.$refs.success.close()
-                  this.name = ''
-                  this.tel = ''
-                  this.dateFormatted = ''
-                  this.time = ''
-                  this.number = ''
-                  this.select = false
-                  this.wish = ''
-                }, 4000)
-              }
+        const myData = encodeURIComponent('<b>Имя: </b>' + data.name + '\n<b>Телефон: </b>' + data.phone + '\n<b>Число: </b>' + data.date + '\n<b>Время: </b>' + data.time + '\n<b>Гостей: </b>' + data.guest + '\n<b>Стол: </b>' + data.table + '\n<b>Пожелания: </b>' + data.wishes)
+        axios.post(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&parse_mode=html&text=${myData}`).then(resp => {
+          if (resp.data.ok === true) {
+            this.$refs.success.open()
+            setTimeout(() => {
+              this.$v.$reset()
+              this.$refs.success.close()
+              this.name = ''
+              this.tel = ''
+              this.dateFormatted = ''
+              this.time = ''
+              this.number = ''
+              this.select = false
+              this.wish = ''
+            }, 4000)
+          }
         }).catch(err => {
-              if (!err.response.data.ok) {
-                this.$v.$reset()
-                this.$refs.error.open()
-                setTimeout(() => {
-                  this.$refs.error.close()
-                }, 4000)
-              }
+          if (!err.response.data.ok) {
+            this.$v.$reset()
+            this.$refs.error.open()
+            setTimeout(() => {
+              this.$refs.error.close()
+            }, 4000)
+          }
         })
         // axios
         //   .post(`api/postvdnh`, data)
